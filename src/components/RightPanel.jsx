@@ -1,17 +1,8 @@
-const RightPanel = () =>
+import currentSong from "./CenterPanel";
+const RightPanel = ({currentSong}) =>
 {
-    let song = {
-    title: "Shape of You",
-    singers: ["Ed Sheeran"],
-    mood: ["Chill", "Happy", "Romantic"],
-    year: 2017,
-    album: "Divide",
-    duration: "3:53",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/JGwWNGJdvx8/hqdefault.jpg"
-  };
     return(
-        <div className=" m-6 p-6h-screen flex items-center justify-center bg-gradient-to-b from-green-200 via-green-400 to-green-500 border-3 border-gray-600 ">
+        <div className="flex-[2] m-6 p-6 h-screen flex items-center justify-center bg-gradient-to-b from-green-200 via-green-400 to-green-500 border-3 border-gray-600 ">
 
             {/* Player Card */}
             <div className="w-80 bg-transparent text-black border-black border-2 border-solid p-6 shadow-2xl">
@@ -24,17 +15,17 @@ const RightPanel = () =>
                 {/* Album Art */}
                 <div className="flex justify-center mb-6">
                     <img
-                        src={song.thumbnail}
-                        alt={song.title}
-                        className="w-48 h-48 rounded-xl object-cover shadow-lg"
+                        src={currentSong.thumbnail}
+                        alt={currentSong.title}
+                        className="w-60 h-60 rounded-xl object-fit shadow-lg"
                     />
                 </div>
 
                 {/* Song Info */}
                 <div className="text-center mb-6">
-                    <h2 className="text-lg font-semibold">{song.title}</h2>
+                    <h2 className="text-lg font-semibold">{currentSong.title}</h2>
                     <p className="text-sm text-gray-400">
-                        {song.singers.join(", ")}
+                        {currentSong.singers.join(", ")}
                     </p>
                 </div>
 

@@ -4,18 +4,17 @@ const Header = () =>
 {
     const [searchInput, setSearchInput] = useState("");
     return(
-       <header className="flex-[1] bg-gradient-to-b from-green-500  via-green-400 to-green-200 text-white flex flex-col justify-center items-center px-4 space-y-6 py-8 border-3 border-gray-600 ">
+       <header className=" flex-[1] flex flex-col gap-4 justify-around items-center px-4 py-12 bg-gradient-to-b from-green-500  via-green-400 to-green-200 text-white ">
     
-    {/* Title */}
-    <h1 className="text-3xl font-bold tracking-wide">Vibify</h1>
-
-    {/* Subtitle */}
-    <p className="text-sm text-blue-100">
-        Discover your favorite music 🎧
-    </p>
+        <div className="flex flex-col pt-4 justify-center items-center">
+            <h1 className="text-6xl font-bold tracking-wide">Vibify</h1>
+            <p className="text-lg text-blue-200">
+                Discover your favorite music 🎧
+            </p>
+        </div>
 
     {/* Search Bar */}
-    <div className="w-full max-w-md relative">
+    <div className="w-full max-w-md relative pb-4 m-4">
         <input
             type="text"
             placeholder="     Search your song here..."
@@ -28,6 +27,7 @@ const Header = () =>
             🔍
         </button>
     </div>
+
 
 </header>
     )
