@@ -5,7 +5,8 @@ import { useState } from "react";
 import songs from "./song_pool";
 const MainArea = () =>
 {
-   const[currentSong, setCurrentSong] = useState(songs[0]);
+  const[currentSong, setCurrentSong] = useState(songs[0]);
+  
     return(
           <div className="flex-[4] flex">
             <LeftPanel/>
