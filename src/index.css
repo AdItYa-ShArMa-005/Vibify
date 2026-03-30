@@ -1,1 +1,201 @@
-@import "tailwindcss";
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    font-weight: 400;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    
+}
+
+.main-content{
+    flex:1;
+    min-height:calc(100vh - 150px) ;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+
+/* Header */
+.header {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    width: 400px;
+    margin-left: 100px;
+    height: 70px;
+    background-color: rgb(210, 251, 210); */
+        display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 70px;
+
+    padding: 0 60px;   /* 👈 IMPORTANT (equal space both sides) */
+    background-color: rgb(210, 251, 210);
+}
+
+/* Navigation (buttons container) */
+.heading {
+    display: flex;
+    gap: 25px;
+    /* background-color: grey; */
+}
+
+/* Buttons */
+.heading button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 8px;
+    transition: 0.2s ease;
+}
+
+/* Hover effect */
+.heading button:hover {
+    transform: scale(1.05);
+}
+
+/* Search container */
+.inputfield {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 55px;
+}
+
+/* Input box */
+.inputfield input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid;
+    outline: none;
+    width: 250px;
+    transition: 0.2s ease;
+}
+
+/* Focus effect */
+.inputfield input:focus {
+    transform: scale(1.02);
+}
+
+/* Search button */
+.inputfield button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Hover */
+.inputfield button:hover {
+    transform: scale(1.05);
+}
+.footer{
+    padding:15px;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+}
+.leftPanel{
+    width: 170px;
+    background-color: rgb(217, 217, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.centerpanel{
+    width: calc(100vw - 170px) ;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 20px 30px 20px 10px; /* top right bottom left */
+
+    /* 20px for left and right and 30px for top and bottom */
+    gap:10px;
+    flex-direction: column;
+}
+
+
+.tagline{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+
+
+}
+.moodboard{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.song-container{
+    /* background-color: green; */
+    width: 100%;
+}
+.all-songs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;        /* 👈 calc hata do */
+    align-items: flex-start; /* 👈 center se flex-start */
+    justify-content: flex-start; /* 👈 center se flex-start */
+    border: none;
+    outline: none;
+}
+.song-button{
+    border: none;
+    background: transparent;
+}
+.songcard {
+    /* border: none; */
+    /* flex: 0 0 auto;      prevents shrinking */
+    width: 200px;
+    height: max-content;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    /* background: #e36a6a;  */
+    border-radius: 8px;
+    /* box-shadow: 0 2px 6px rgba(0,0,0,0.1); optional */
+    
+}
+
+.songcard img {
+    width: 150px;
+    /* height: 150px; */
+    
+    object-fit: cover;
+    
+    border-radius: 8px;
+}
+.centerpanel {
+    width: calc(100vw - 170px);  /* 👈 170px karo, 70px nahi */
+    display: flex;
+    padding: 20px 30px 20px 20px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+

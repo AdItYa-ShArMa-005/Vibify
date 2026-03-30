@@ -97,7 +97,7 @@ const songs = [
     album: "RRR",
     duration: "3:34",
     language: "Telugu",
-    thumbnail: "https://i.ytimg.com/vi/OsU0CGZoV8E/hqdefault.jpg"
+    thumbnail: "https://c8.alamy.com/comp/2R7R1KD/rrr-naatu-naatu-2022-directed-by-prem-rakshith-2R7R1KD.jpg"
   }
 ];
 

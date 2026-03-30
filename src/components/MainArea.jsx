@@ -7,10 +7,10 @@ const MainArea = () =>
 {
    const[currentSong, setCurrentSong] = useState(songs[0]);
     return(
-          <div className="flex-[4] flex">
+          <div className="main-content">
             <LeftPanel/>
             <CenterPanel songs={songs} setCurrentSong={setCurrentSong}/>
-            <RightPanel currentSong={currentSong}/>
+            {/* <RightPanel currentSong={currentSong}/> */}
       </div>
     )
 }
