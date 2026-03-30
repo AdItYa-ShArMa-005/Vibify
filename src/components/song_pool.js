@@ -70,16 +70,6 @@ const songs = [
     thumbnail: "https://i.ytimg.com/vi/Pkh8UtuejGw/hqdefault.jpg"
   },
   {
-    title: "Levitating",
-    singers: ["Dua Lipa"],
-    mood: ["Happy", "Dance", "Feel Good"],
-    year: 2020,
-    album: "Future Nostalgia",
-    duration: "3:23",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/TUVcZfQe-Kw/hqdefault.jpg"
-  },
-  {
     title: "Apna Bana Le",
     singers: ["Arijit Singh"],
     mood: ["Romantic", "Soft", "Emotional"],
