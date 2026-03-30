@@ -10,7 +10,7 @@ import SideBar from './components/SideBar';
 function App() {
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-br from-purple-500 to-indigo-600">
+    <div className="App">
       <Header/>
       <MainArea/>
       <Footer/>
