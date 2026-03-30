@@ -2,10 +2,10 @@ import currentSong from "./CenterPanel";
 const RightPanel = ({currentSong}) =>
 {
     return(
-        <div className="flex-[2] m-6 p-6 h-screen flex items-center justify-center bg-gradient-to-b from-green-200 via-green-400 to-green-500 border-3 border-gray-600 ">
+        <div className="flex-[2] m-6 p-6 h-screen flex flex-col items-center justify-center bg-gradient-to-b from-green-200 via-green-400 to-green-500 border-3 border-gray-600 ">
 
             {/* Player Card */}
-            <div className="w-80 bg-transparent text-black border-black border-2 border-solid p-6 shadow-2xl">
+            {/* <div className="w-80 bg-transparent text-black border-black border-2 border-solid p-6 shadow-2xl"> */}
 
                 {/* Top Bar */}
                 <div className="flex justify-center items-center mb-6 text-sm text-gray-300">
@@ -59,7 +59,7 @@ const RightPanel = ({currentSong}) =>
                     <button className="text-xl">⚡</button>
                 </div>
 
-            </div>
+            {/* </div> */}
 
         </div>
     )
