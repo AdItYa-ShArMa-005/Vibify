@@ -1,16 +1,13 @@
 import LeftPanel from "./LeftPanel";
 import CenterPanel from "./CenterPanel";
 import RightPanel from "./RightPanel";
-import { useState } from "react";
-import songs from "./song_pool";
+
 const MainArea = () =>
-{
-  const[currentSong, setCurrentSong] = useState(songs[0]);
-  
+{  
     return(
           <div className="main-content">
             <LeftPanel/>
-            <CenterPanel songs={songs} setCurrentSong={setCurrentSong}/>
+            <CenterPanel/>
             {/* <RightPanel currentSong={currentSong}/> */}
       </div>
     )
