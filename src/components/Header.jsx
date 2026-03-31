@@ -7,6 +7,7 @@ const Header = () =>
     const[searchResults, setSearchResults] = useState([]);
     const[status, setStatus] = useState("");
     const[fetching, setFetching] = useState(false);
+    const [list,setlist]=useState(false);
     const handleSearch = (input) =>{
         setSearchInput(input.trim());
         if(input.trim() === "")
@@ -84,36 +85,66 @@ const Header = () =>
 
     {/* Search Bar */}
     <div className="inputfield">
-        <input
+        <div>
+            <input
             type="text"
             placeholder="     Search your favourite song here..."
             value={searchInput}
             onChange={(e) => handleSearch(e.target.value)}
-            className=""
+            
+            className="inputText"
         />
 
         <button className="" onClick={handleSubmit}>
             🔍
         </button>
-    </div>
-    <div>
+        </div>
+        
+        <div>
         {error && <p className="error">{error}</p>}
         {fetching && <p className="status">fetching ... </p>}
         {!fetching && status && <p className="status">{status}</p>}
         {searchResults.length > 0 &&
         <div>
-            <ul>
+            {/* <ul>
                 {
                     searchResults.map((song, index) => (
-                        <li key={index} className="border-b border-gray-300 py-2">
-                            <p className="font-semibold">{song.title}</p>
+                        <li key={index} className="">
+                            <p className="">{song.title}</p>
                         </li>
                     ))
                 }
-            </ul>
+            </ul> */}
+            {searchInput && (
+            <div className="search-overlay">
+    
+                {searchResults.length > 0 ? (
+              <>
+             <p className="search-title">RESULTS</p>
+
+         <div className="search-grid">
+          {searchResults.map((song, index) => (
+            <div key={index} className="search-item">
+              <img src={song.thumbnail} alt="" />
+              <div>
+                <p>{song.title}</p>
+                <span>Song</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    ) : (
+      <p className="no-results">No songs found 😕</p>
+    )}
+
+  </div>
+)}
         </div>}
 
     </div>
+    </div>
+    
 
 
 </div>

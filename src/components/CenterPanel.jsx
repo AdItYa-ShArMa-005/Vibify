@@ -26,6 +26,7 @@ const CenterPanel = ({ songs, setCurrentSong }) =>
             </div> */}
 
         {/* recommendation list */}
+        
             <div className="song-container">
                 <h2>Recommended songs :</h2>
                 <div className="all-songs">

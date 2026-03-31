@@ -40,7 +40,7 @@
     align-items: center;
 
     width: 100%;
-    height: 70px;
+    height: 100px;
 
     padding: 0 60px;   /* 👈 IMPORTANT (equal space both sides) */
     background-color: rgb(210, 251, 210);
@@ -61,6 +61,7 @@
     cursor: pointer;
     padding: 5px 8px;
     transition: 0.2s ease;
+    position: relative;
 }
 
 /* Hover effect */
@@ -68,41 +69,110 @@
     transform: scale(1.05);
 }
 
-/* Search container */
 .inputfield {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    position: relative;
+    width: 300px;   /* match input */
     margin-left: 55px;
 }
 
 /* Input box */
 .inputfield input {
-    padding: 8px 12px;
+    padding: 8px 40px 8px 12px;  /* right side space for button */
     border-radius: 6px;
     border: 1px solid;
     outline: none;
-    width: 250px;
+    width: 100%;
     transition: 0.2s ease;
+    font-size: 14px;
 }
 
 /* Focus effect */
-.inputfield input:focus {
-    transform: scale(1.02);
-}
+/* .inputfield input:focus {
+    transform: scale(2.05);
+    /* width:300px;
+    height:100px;
+    margin-top: 5px; */
+/* }  */
 
 /* Search button */
 .inputfield button {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid;
+    position: absolute;
+    right: 10px;              /* FIXED */
+    top: 50%;                 /* center vertically */
+    transform: translateY(-50%);
+    
+    background: transparent;
+    border: none;
     cursor: pointer;
-    transition: 0.2s ease;
 }
 
 /* Hover */
 .inputfield button:hover {
-    transform: scale(1.05);
+    transform: translateY(-50%) scale(1.1);
+}
+.search-overlay {
+    position: absolute;
+    top: 120%;
+    left: -200px;   /* 👈 thoda left shift for center look */
+    
+    width: 900px;   /* 👈 BIG BOX */
+    min-height: 250px;
+
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+/* Heading inside */
+.search-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/* Grid like JioSaavn */
+.search-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* Each item */
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Thumbnail */
+.search-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Text */
+.search-item p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.search-item span {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Hover */
+.search-item:hover {
+    background: rgba(0,0,0,0.05);
+    border-radius: 8px;
+    padding: 5px;
 }
 .footer{
     padding:15px;
