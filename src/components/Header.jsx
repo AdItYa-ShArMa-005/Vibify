@@ -1,13 +1,23 @@
 import { useState } from "react";
-import songs from "./song_pool";
+import { setSongList } from "../states/songListSlice";
+import {useSelector, useDispatch} from "react-redux";
+import { GoogleGenAI } from "@google/genai";
+import { Link } from "react-router-dom";
+
+
 const Header = () =>
 {
+    const ai = new GoogleGenAI({apiKey : import.meta.env.VITE_GENAI_API_KEY});
+
     const [searchInput, setSearchInput] = useState("");
     const [error, setError] = useState("");
     const[searchResults, setSearchResults] = useState([]);
     const[status, setStatus] = useState("");
     const[fetching, setFetching] = useState(false);
-    const [list,setlist]=useState(false);
+  
+    const songs = useSelector(state => state.songList.value);
+    const dispatch = useDispatch();
+    
     const handleSearch = (input) =>{
         setSearchInput(input.trim());
         if(input.trim() === "")
@@ -30,26 +40,47 @@ const Header = () =>
 
     }
 
-    const fetchSong = async (songName) =>
+     const fetchSong = async (songName) =>
     {
         setError("");
         setFetching(true);
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        try{
+            const response = await ai.models.generateContent({
+            model: "gemini-2.5-flash",
+            contents: `
+                    Give me a song ${songName} in this exact JSON format:
+
+                    {
+                    "title": "string",
+                    "singers": ["string"],
+                    "mood": ["string"],
+                    "year": number,
+                    "album": "string",
+                    "duration": "string",
+                    "language": "string",
+                    "thumbnail": "string"
+                    }
+
+                    Return ONLY raw JSON (no markdown, no backticks).
+                    `
+         });
+
+
+            const text = response.text;
+            const data = JSON.parse(text);
+            dispatch(setSongList([...songs, data]));
+            setStatus("Song successfully added to your library!");
+            setSearchInput("");
+        
+        }
+        catch(error)
+        {
+            setStatus("Unable to fetch song right now. Sorry for inconvenience. Try again later!");
+            console.error("Error fetching song:", error);
+            return;
+        }
         setFetching(false);
-        setStatus("Song added successfully!");
         setTimeout(() => setStatus(""), 3000);
-        let newSong = {
-            title: "Levitating",
-            singers: ["Dua Lipa"],
-            mood: ["Happy", "Dance", "Feel Good"],
-            year: 2020,
-            album: "Future Nostalgia",
-            duration: "3:23",
-            language: "English",
-            thumbnail: "https://i.ytimg.com/vi/TUVcZfQe-Kw/hqdefault.jpg"
-        };
-        songs.push(newSong);
-        handleSearch(songName);
     }
 
     const handleSubmit = () =>
@@ -64,7 +95,7 @@ const Header = () =>
         if(searchResults.length === 0)
         {
             setError("No songs found matching your search. We will try to fetch it for you.");
-            setTimeout(() => fetchSong(searchInput), 3000);
+            setTimeout(() => fetchSong(searchInput), 2000);
 
         }
         else
@@ -75,79 +106,71 @@ const Header = () =>
     return(
        <div className="header">
     
-        <div className="heading">
-            
-            <button>Home</button>
-            <button>Explore</button>
-            <button>Playlist</button>
-            <button>Library</button>
-        </div>
-
-    {/* Search Bar */}
-    <div className="inputfield">
-        <div>
-            <input
-            type="text"
-            placeholder="     Search your favourite song here..."
-            value={searchInput}
-            onChange={(e) => handleSearch(e.target.value)}
-            
-            className="inputText"
-        />
-
-        <button className="" onClick={handleSubmit}>
-            🔍
-        </button>
-        </div>
-        
-        <div>
-        {error && <p className="error">{error}</p>}
-        {fetching && <p className="status">fetching ... </p>}
-        {!fetching && status && <p className="status">{status}</p>}
-        {searchResults.length > 0 &&
-        <div>
-            {/* <ul>
-                {
-                    searchResults.map((song, index) => (
-                        <li key={index} className="">
-                            <p className="">{song.title}</p>
-                        </li>
-                    ))
-                }
-            </ul> */}
-            {searchInput && (
-            <div className="search-overlay">
-    
-                {searchResults.length > 0 ? (
-              <>
-             <p className="search-title">RESULTS</p>
-
-         <div className="search-grid">
-          {searchResults.map((song, index) => (
-            <div key={index} className="search-item">
-              <img src={song.thumbnail} alt="" />
-              <div>
-                <p>{song.title}</p>
-                <span>Song</span>
-              </div>
+            <div className="heading">
+                
+                <Link to='/MainArea'>Home</Link>
+                <Link to='/Library'>Library</Link>
+                <Link to='/Explore'>Explore</Link>
+                <Link to='/Playlist'>Playlist</Link>
             </div>
-          ))}
+
+            {/* Search Bar */}
+            <div className="inputfield">
+                <div>
+                    <input
+                    type="text"
+                    placeholder=" Search your favourite song here..."
+                    value={searchInput}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    className="inputText"/>
+
+                    <button className="" onClick={handleSubmit}>
+                        🔍
+                    </button>
+                </div>
+        
+                <div>
+                    {error && !status && <p className="error">{error}</p>}
+                    {fetching && <p className="status">fetching ... </p>}
+                    {!fetching && status && <p className="status">{status}</p>}
+                    {
+                        searchResults.length > 0 &&
+                            <div>
+                                {
+                                    searchInput && (
+                                        <div className="search-overlay">
+                                
+                                            {
+                                                searchResults.length > 0 ? (
+                                                <>
+                                                    <p className="search-title">RESULTS</p>
+
+                                                    <div className="search-grid">
+                                                        {searchResults.map((song, index) => (
+                                                            <div key={index} className="search-item">
+                                                            <img src={song.thumbnail} alt="" />
+                                                            <div>
+                                                                <p>{song.title}</p>
+                                                                <span>Song</span>
+                                                            </div>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </>
+                                                ) : (
+                                                        <p className="no-results">No songs found 😕</p>
+                                                    )
+                                            }
+
+                                        </div>
+                                    )
+                                }
+                            </div>
+                    } 
+
+                </div>
+            </div>
         </div>
-      </>
-    ) : (
-      <p className="no-results">No songs found 😕</p>
-    )}
-
-  </div>
-)}
-        </div>}
-
-    </div>
-    </div>
-    
-
-
-</div>
     )
 }
 export default Header;

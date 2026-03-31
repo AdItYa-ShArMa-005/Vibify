@@ -1,9 +1,11 @@
 import SongCard from "./SongCard";
 import { useState } from "react";
+import {useSelector, useDispatch} from "react-redux";
+import { setSongList } from "../states/songListSlice";
 
-const CenterPanel = ({ songs, setCurrentSong }) =>
+const CenterPanel = () =>
 {
-    const [mood,setmood]=useState('happy');
+    const songs = useSelector(state => state.songList.value);
     return(
         <div className="centerpanel">
             <h1 className="tagline">Your vibes , your tunes—let the music match your mood</h1>
@@ -32,8 +34,8 @@ const CenterPanel = ({ songs, setCurrentSong }) =>
                 <div className="all-songs">
                     {
                     songs.map((song, index) => (
-                        <button className="song-button" onClick={()=>setCurrentSong(song)}>
-                            <SongCard key={index} song={song} mood={mood}/>
+                        <button key={index} className="song-button">
+                            <SongCard key={song.title.toLowerCase()} song={song}/>
                         </button>
                     ))
 
