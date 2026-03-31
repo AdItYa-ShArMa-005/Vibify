@@ -14,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route path="/" element={<MainArea />} />
           <Route path="/MainArea" element={<MainArea />} />
           <Route path="/Library" element={<Library />} />
           <Route path="/Explore" element={<Explore />} />
