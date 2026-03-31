@@ -106,6 +106,7 @@ const Header = () =>
     return(
        <div className="header">
     
+<<<<<<< HEAD
             <div className="heading">
                 
                 <Link to='/MainArea'>Home</Link>
@@ -171,6 +172,68 @@ const Header = () =>
                 </div>
             </div>
         </div>
+=======
+        <div className="heading">
+            
+            <button>Home</button>
+            <button>Explore</button>
+            <button>Playlist</button>
+            <button>Library</button>
+        </div>
+
+    {/* Search Bar */}
+    <div className="inputfield">
+        <div>
+            <input
+            type="text"
+            placeholder="     Search your favourite song here..."
+            value={searchInput}
+            onChange={(e) => handleSearch(e.target.value)}
+            
+            className="inputText"
+        />
+
+        <button className="" onClick={handleSubmit}>
+            🔍
+        </button>
+        </div>
+        
+        <div>
+       
+        <div className="results-container">
+        {searchInput && (
+        <div className="search-overlay">
+      
+        {searchResults.length > 0 ? (
+        <>
+          <p className="search-title">TRENDING</p>
+          <div className="line"></div>
+          <div className="search-grid">
+            {searchResults.map((song, index) => (
+              <div key={index} className="search-item">
+                <img src={song.thumbnail} alt="" />
+                <div>
+                  <p>{song.title}</p>
+                  <span>Song</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+        ) : (
+         <p className="no-results">No songs found... </p>
+        )}
+
+        </div>
+        )}
+        </div>
+        </div>
+        </div>
+    
+
+
+</div>
+>>>>>>> a2ae403 (Search bar ui changes)
     )
 }
 export default Header;
