@@ -19,7 +19,7 @@ const Header = () =>
     const dispatch = useDispatch();
     
     const handleSearch = (input) =>{
-        setSearchInput(input.trim());
+        setSearchInput(input.trimStart());
         if(input.trim() === "")
         {
             setSearchResults([]);

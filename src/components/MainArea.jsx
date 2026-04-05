@@ -8,7 +8,7 @@ const MainArea = () =>
           <div className="main-content">
             <LeftPanel/>
             <CenterPanel/>
-            {/* <RightPanel currentSong={currentSong}/> */}
+            {/* <RightPanel/> */}
       </div>
     )
 }
