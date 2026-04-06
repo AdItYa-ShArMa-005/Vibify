@@ -5,7 +5,9 @@
     box-sizing: border-box;
     font-family: "Open Sans";
     font-weight: 400;
+
 }
+
 .App{
     display: flex;
     flex-direction: column;
@@ -19,8 +21,7 @@
     min-height:calc(100vh - 150px) ;
     width: 100%;
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
 
 }
 
@@ -186,8 +187,8 @@
 }
 .footer{
     padding:15px;
-    align-items: center;
-    height: 50px;
+    align-items: start;
+    height: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -198,7 +199,7 @@
     background-color: rgb(217, 217, 245);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 .centerpanel{
     width: calc(100vw - 170px) ;
@@ -276,13 +277,16 @@
     object-fit: cover;
     
     border-radius: 8px;
+
 }
+
 .centerpanel {
     width: calc(100vw - 170px);  /* 👈 170px karo, 70px nahi */
     display: flex;
     padding: 20px 30px 20px 20px;
     gap: 10px;
     flex-direction: column;
+
 }
 
 .line{
@@ -292,4 +296,73 @@
     background:  rgb(194, 191, 191);
     border-radius: 10px;
     margin-bottom: 10px;
+
+}
+
+.mood-icons{
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+
+}
+
+.mood-icons img{
+    height:100px;
+    width: 100px;
+    border-radius: 50px;
+    object-fit: cover;
+
+}
+.musicplayer{
+    position:fixed;
+    display: flex;
+    bottom:0;
+    left:0;
+    height:80px;
+    z-index: 1000;
+    /* justify-content: space-between; */
+    width: 100%;
+    flex-direction: row;
+    width: 100%;
+    background: #615e5e;
+    color: white;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    width: 100%;
+}
+.description{
+
+display: flex;
+   margin-left:10px;
+   gap:5px;
+   
+    /* justify-content: flex-start; */
+}
+.song-desc{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+.image img{
+    height: 80px;
+    width:80px;
+    object-fit: cover;
+}
+.information{
+    position: absolute;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    right: 0px;
+    gap:20px
+    
+}
+.buttons{
+    position:absolute;
+    left:50%;
 }

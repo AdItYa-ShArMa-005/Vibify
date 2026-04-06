@@ -1,5 +1,11 @@
 import SongCard from "./SongCard";
 import  songs  from "./song_pool";
+import chill from "../images/chill.jpeg";
+import focus from "../images/focus.jpeg";
+import  flow from "../images/flow.png";
+import sad from "../images/sad.jpeg";
+import workout from "../images/workout.jpeg";
+// import MusicPlayer from "./MusicPlayer";
 import {useSelector, useDispatch} from "react-redux";
 import { setSongList } from "../states/songListSlice";
 import { setCategory } from "../states/songCategorySlice";
@@ -39,6 +45,15 @@ const CenterPanel = () =>
 
             return diff <= 120; // 2 hours = 120 mins
     }
+    function songHandler(id){
+         const selectedCategory = id;
+         dispatch(setCategory(selectedCategory));
+         selectedCategory !== "None" ?
+         dispatch(setSongList(songs.filter(song => song.mood.includes(selectedCategory))))
+                            :
+         dispatch(setSongList(songs.filter(song => calculateDifference(song.timeStamp))))
+    }
+    
     return(
         <div className="centerpanel">
             <h1 className="tagline">Your vibes , your tunes—let the music match your mood</h1>
@@ -49,10 +64,12 @@ const CenterPanel = () =>
         {/* recommendation list */}
         
             <div className="song-container">
-                <div className="song-container-top">
-                    <h2>Recommended songs :</h2>
-                    <div>
-                        <label>Select mood : </label>
+                <div className="mood-icons">
+                    {/* <h2>Recommended songs :</h2>
+
+                    */ }
+                    
+                        {/* <label>Select mood : </label>
                         <select name="category" value={category} onChange={(e) => {
                             const selectedCategory = e.target.value;
                             dispatch(setCategory(selectedCategory));
@@ -68,7 +85,54 @@ const CenterPanel = () =>
                                 ))  
                             }
                         </select>
-                    </div>
+                     */}
+                         <div className="flow">
+                            <img src={flow} alt="" id="flow" onClick={()=>songHandler("Flow")}/>
+                        </div>
+                        <div className="Motivational">
+                            <img src={workout} alt="" id="motivation" onClick={()=>songHandler("Motivational")}></img>
+                        </div>
+                        {/* <div className="party">
+                            <img src="" alt="" />
+                        </div> */}
+                        <div className="chill">
+                            <img src={chill} alt="" id="chill" onClick={()=>songHandler("Chill")}/>
+                        </div> 
+                       <div className="sad">
+                            <img src={sad} alt="" id="sad" onClick={()=>songHandler("Sad")}/>
+                        </div>
+                        <div className="focus">
+                            <img src={focus} alt="" id="feel good" onClick={()=>songHandler("Feel Good")}/>
+                        </div>
+                        {/* <div className="love">
+                            <img src="" alt="" />
+                        </div>
+                        <div className="focus">
+                            <img src={focus} alt="" />
+                        </div>
+                        <div className="romantic">
+                            <img src="" alt="" />
+                        </div> */}
+                        {/* <div className="Night Dive">
+                            <img src="" alt="" />
+                        </div>
+                        <div className="Warm">
+                            <img src="" alt="" />
+                        </div>
+                        <div className="Soft">
+                           <img src="" alt="" />   
+                        </div>
+                        
+                        <div className="Dance">
+                            <img src="" alt="" />
+                        </div>
+                        <div className="Energetic">
+                            <img src="" alt="" />
+                        </div> 
+         */}
+
+{/* 
+                    </div> */}
                         
                 </div>
                 {
@@ -84,8 +148,10 @@ const CenterPanel = () =>
                     }
                 </div>
             </div>
+            
 
-        </div>
+            </div>
+       
     )
 }
 export default CenterPanel;

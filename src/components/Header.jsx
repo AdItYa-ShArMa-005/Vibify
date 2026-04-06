@@ -17,7 +17,7 @@ const Header = () =>
   
     const songs = useSelector(state => state.songList.value);
     const dispatch = useDispatch();
-    
+
     const handleSearch = (input) =>{
         setSearchInput(input.trimStart());
         if(input.trim() === "")
@@ -26,7 +26,7 @@ const Header = () =>
             setError("");
             return;
         }
-        let foundSongs = songs.filter(song => song.title.toLowerCase().includes(searchInput.toLowerCase()));
+        let foundSongs = songs.filter(song => song.title.toLowerCase().includes(input.toLowerCase()));
         if(foundSongs.length === 0)
         {
             setError("No songs found matching your search. Press search and we will fetch it for you.");
@@ -86,7 +86,7 @@ const Header = () =>
 
     return(
        <div className="header">
-    
+ 
         <div className="heading">
             
             <Link to='/MainArea'>Home</Link>
@@ -94,6 +94,7 @@ const Header = () =>
                 <Link to='/Explore'>Explore</Link>
                 <Link to='/Playlist'>Playlist</Link>
         </div>
+
 
     {/* Search Bar */}
     <div className="inputfield">
@@ -148,4 +149,5 @@ const Header = () =>
 </div>
     )
 }
+
 export default Header;

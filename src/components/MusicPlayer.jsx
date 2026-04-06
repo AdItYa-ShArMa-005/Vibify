@@ -1,27 +1,29 @@
+
 export default function MusicPlayer({song}){
     return(
-        <div>
-            <div>
-                <div>
+        <div className="musicplayer">
+            <div className="description" >
+                <div className="image">
                 <img src={song.thumbnail} alt="pic"></img>
                 </div>
-                <div>
-                    {song.title}
-                    {song.singer}
+                <div className="song-desc">
+                   <div> {song.title}</div>
+                    <div>{song.singers}</div>
                 </div>
             </div>
-            <div>
+            <div className="buttons">
                 <button>Left</button>
                 <button>Stop</button>
-                <biutton>Right</biutton>
+                <button>Right</button>
             </div>
-            <div>{`0.00/${song.duration}`}</div>
-            <div>
-                Heart icon
+            <div className="information">
+                <div className="song-duration">{`0.00/${song.duration}`}</div>
+                <div className="heart-icon"> Heart icon </div>
+                <div className="info">info</div>
+                <div className="sound">sound</div>
+                <div className="expand">expand</div>
             </div>
-            <div>info</div>
-            <div>sound</div>
-            <div>expand</div>
+        
         </div>
     )
 }
