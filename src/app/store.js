@@ -1,4 +1,4 @@
-import {configureStore, current} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import songListReducer from "../states/songListSlice";
 import songCategoryReducer from "../states/songCategorySlice";
 import currentSongReducer from "../states/currentSongSlice";

@@ -1,6 +1,5 @@
 import LeftPanel from "./LeftPanel";
 import CenterPanel from "./CenterPanel";
-import RightPanel from "./RightPanel";
 import MusicPlayer from "./MusicPlayer";
 import songs from "./song_pool";
 const MainArea = () =>
@@ -8,7 +7,6 @@ const MainArea = () =>
     return(
           <div className="main-content">
             <div className="content">
-              <LeftPanel/>
               <CenterPanel/>
             </div>
             <div className="music">

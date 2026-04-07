@@ -202,7 +202,8 @@
     align-items: start;
 }
 .centerpanel{
-    width: calc(100vw - 170px) ;
+    /* width: calc(100vw - 170px) ; */
+    width : 100%;
     display: flex;
     /* justify-content: center; */
     /* align-items: center; */
@@ -280,14 +281,14 @@
 
 }
 
-.centerpanel {
-    width: calc(100vw - 170px);  /* 👈 170px karo, 70px nahi */
+/* .centerpanel {
+    width: calc(100vw - 170px); 
     display: flex;
     padding: 20px 30px 20px 20px;
     gap: 10px;
     flex-direction: column;
 
-}
+} */
 
 .line{
     width:800px;
@@ -299,14 +300,36 @@
 
 }
 
-.mood-icons{
+.mood-bar{
+    padding: 10px;
+    width : 100%;
+    height : 150px;
     display: flex;
     flex-direction: row;
     gap:50px;
+    border: 2px solid black;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
-.mood-icons img{
+/* .mood-icons img{
+    height:100px;
+    width: 100px;
+    border : 2px solid black;
+    border-radius: 50px;
+    object-fit: cover;
+
+} */
+
+.mood-icons{
+    height : 100px;
+    width : 100px;
+    border : 1px solid black;
+    border-radius: 50px;;
+}
+
+.mood-icons button{
     height:100px;
     width: 100px;
     border-radius: 50px;
@@ -314,54 +337,122 @@
 
 }
 .musicplayer{
+    padding: 10px;
     position:fixed;
     display: flex;
     bottom:0;
     left:0;
-    height:80px;
+    height:100px;
     z-index: 1000;
     /* justify-content: space-between; */
     width: 100%;
     flex-direction: row;
-    width: 100%;
+    justify-content: space-between;
     background: #615e5e;
     color: white;
     align-items: center;
 }
 
-.content{
-    display: flex;
-    width: 100%;
+.musicplayer button{
+    height: 75px;
+    width : 50px;
+    background-color: transparent;
+    font-size: 30px;
+    border : none;
 }
-.description{
 
-display: flex;
+.description{
+    width: 20%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
    margin-left:10px;
    gap:5px;
+
    
     /* justify-content: flex-start; */
 }
+
 .song-desc{
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: start;
     gap:5px;
 }
+
+.information{
+    width: 60%;
+    height : 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.outer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width : 82%;
+    height : 80%;
+    border : 2px solid black;
+}
+
+.inner{
+    width : 20%;
+    height : 100%;
+    background-color: yellow;
+}
+
+.song-duration{
+    width : 17%;
+    height : 80%;
+    text-align: center;
+
+}
+
+.control-buttons{
+    width : 80%;
+    height : 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+}
+
+.additional-buttons{
+    width : 20%;
+    height : 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.content{
+    display: flex;
+    width: 100%;
+}
+
+
 .image img{
     height: 80px;
     width:80px;
     object-fit: cover;
 }
-.information{
-    position: absolute;
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    right: 0px;
-    gap:20px
-    
-}
+
 .buttons{
     position:absolute;
     left:50%;

@@ -319,247 +319,258 @@ const songs = [
     timeStamp: "6:05 PM"
   },
   {
-    title: "Perfect Strangers",
-    singers: ["Jonas Blue"],
-    mood: ["Party"],
-    year: 2016,
-    album: "Blue",
-    duration: "3:16",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/EkHTsc9PU2A/hqdefault.jpg",
-    timeStamp: "9:50 PM"
-  }
-  ,
-  {
-    title: "Perfect",
-    singers: ["Ed Sheeran"],
-    mood: ["Romantic", "Soft", "Emotional"],
-    year: 2017,
-    album: "Divide",
-    duration: "4:23",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/2Vv-BfVoq4g/hqdefault.jpg"
-  },
-  {
-    title: "Faded",
-    singers: ["Alan Walker"],
-    mood: ["Sad", "Emotional", "Chill"],
-    year: 2015,
-    album: "Different World",
-    duration: "3:32",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/60ItHLz5WEA/hqdefault.jpg"
-  },
-  {
-    title: "On My Way",
-    singers: ["Alan Walker", "Sabrina Carpenter"],
-    mood: ["Motivational", "Energetic", "Travel"],
-    year: 2019,
-    album: "Single",
-    duration: "3:13",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/dhYOPzcsbGM/hqdefault.jpg"
-  },
-  {
-    title: "Raataan Lambiyan",
-    singers: ["Jubin Nautiyal", "Asees Kaur"],
-    mood: ["Romantic", "Calm", "Soft"],
-    year: 2021,
-    album: "Shershaah",
-    duration: "3:50",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/gvyUuxdRdR4/hqdefault.jpg"
-  },
-  {
-    title: "Ranjha",
-    singers: ["B Praak", "Jasleen Royal"],
-    mood: ["Emotional", "Sad", "Romantic"],
-    year: 2021,
-    album: "Shershaah",
-    duration: "3:48",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/VuG7ge_8I2Y/hqdefault.jpg"
-  },
-  {
-    title: "We Rollin",
-    singers: ["Shubh"],
-    mood: ["Hype", "Cool", "Chill"],
-    year: 2021,
-    album: "Single",
-    duration: "3:19",
-    language: "Punjabi",
-    thumbnail: "https://i.ytimg.com/vi/Ml9uJNF_kXk/hqdefault.jpg"
-  },
-  {
-    title: "295",
-    singers: ["Sidhu Moose Wala"],
-    mood: ["Serious", "Real Talk", "Emotional"],
-    year: 2021,
-    album: "Moosetape",
-    duration: "4:10",
-    language: "Punjabi",
-    thumbnail: "https://i.ytimg.com/vi/7f0dQ5l3d7g/hqdefault.jpg"
-  },
-  {
-    title: "Tera Ban Jaunga",
-    singers: ["Akhil Sachdeva", "Tulsi Kumar"],
-    mood: ["Romantic", "Soft", "Emotional"],
-    year: 2019,
-    album: "Kabir Singh",
-    duration: "3:56",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/wxNn6A7Z3zA/hqdefault.jpg"
-  },
-  {
-    title: "Attention",
-    singers: ["Charlie Puth"],
-    mood: ["Chill", "Groovy", "Attitude"],
-    year: 2017,
-    album: "Voicenotes",
-    duration: "3:31",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/nfs8NYg7yQM/hqdefault.jpg"
-  },
-  {
-    title: "See You Again",
-    singers: ["Wiz Khalifa", "Charlie Puth"],
-    mood: ["Emotional", "Sad", "Memories"],
-    year: 2015,
-    album: "Furious 7",
-    duration: "3:57",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/RgKAFK5djSk/hqdefault.jpg"
-  },
-  {
-    title: "Gangnam Style",
-    singers: ["PSY"],
-    mood: ["Fun", "Dance", "Party"],
-    year: 2012,
-    album: "PSY 6",
-    duration: "3:39",
-    language: "Korean",
-    thumbnail: "https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg"
-  },
-  {
-    title: "How You Like That",
-    singers: ["BLACKPINK"],
-    mood: ["Hype", "Powerful", "Energetic"],
-    year: 2020,
-    album: "The Album",
-    duration: "3:01",
-    language: "Korean",
-    thumbnail: "https://i.ytimg.com/vi/ioNng23DkIM/hqdefault.jpg"
-  },
-  {
-    title: "Cheap Thrills",
-    singers: ["Sia"],
-    mood: ["Party", "Dance", "Fun"],
-    year: 2016,
-    album: "This Is Acting",
-    duration: "3:31",
-    language: "English",
-    thumbnail: "https://i.ytimg.com/vi/31crA53Dgu0/hqdefault.jpg"
-  },
+  title: "Perfect",
+  singers: ["Ed Sheeran"],
+  mood: ["Romantic", "Soft", "Emotional"],
+  year: 2017,
+  album: "Divide",
+  duration: "4:23",
+  language: "English",
+  thumbnail: "https://i.ytimg.com/vi/2Vv-BfVoq4g/hqdefault.jpg",
+  timeStamp: "7:15 PM"
+},
 {
-    title: "Kar Gayi Chull",
-    singers: ["Badshah", "Neha Kakkar"],
-    mood: ["Party", "Dance", "Hype"],
-    year: 2016,
-    album: "Kapoor & Sons",
-    duration: "3:07",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/NTHz9ephYTw/hqdefault.jpg"
-  },
-  {
-    title: "Abhi Toh Party Shuru Hui Hai",
-    singers: ["Badshah", "Aastha Gill"],
-    mood: ["Party", "Hype", "Dance"],
-    year: 2014,
-    album: "Khoobsurat",
-    duration: "2:59",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/8LZgzAZ2lpQ/hqdefault.jpg"
-  },
-  {
-    title: "Nashe Si Chadh Gayi",
-    singers: ["Arijit Singh"],
-    mood: ["Party", "Dance", "Romantic"],
-    year: 2016,
-    album: "Befikre",
-    duration: "3:57",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/WD8u1kD3p6s/hqdefault.jpg"
-  },
-  {
-    title: "London Thumakda",
-    singers: ["Neha Kakkar", "Sonu Kakkar"],
-    mood: ["Wedding", "Dance", "Fun"],
-    year: 2014,
-    album: "Queen",
-    duration: "3:50",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/udra3Mfw2oo/hqdefault.jpg"
-  },
-  {
-    title: "Morni Banke",
-    singers: ["Guru Randhawa", "Neha Kakkar"],
-    mood: ["Dance", "Party", "Wedding"],
-    year: 2018,
-    album: "Badhaai Ho",
-    duration: "3:18",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/1Q4g1Qb4iRk/hqdefault.jpg"
-  },
-  {
-    title: "Proper Patola",
-    singers: ["Diljit Dosanjh", "Badshah"],
-    mood: ["Party", "Cool", "Dance"],
-    year: 2018,
-    album: "Namaste England",
-    duration: "3:05",
-    language: "Punjabi",
-    thumbnail: "https://i.ytimg.com/vi/NRk7qKc8Q9Q/hqdefault.jpg"
-  },
-  {
-    title: "High Heels",
-    singers: ["Yo Yo Honey Singh", "Jaz Dhami"],
-    mood: ["Party", "Dance", "Hype"],
-    year: 2016,
-    album: "Ki & Ka",
-    duration: "3:24",
-    language: "Punjabi",
-    thumbnail: "https://i.ytimg.com/vi/2d3p6yqXjLk/hqdefault.jpg"
-  },
-  {
-    title: "Bom Diggy Diggy",
-    singers: ["Zack Knight", "Jasmin Walia"],
-    mood: ["Party", "Dance", "Fun"],
-    year: 2018,
-    album: "Sonu Ke Titu Ki Sweety",
-    duration: "3:58",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/KV7kJcR3p9A/hqdefault.jpg"
-  },
-  {
-    title: "Aankh Marey",
-    singers: ["Neha Kakkar", "Mika Singh"],
-    mood: ["Party", "Dance", "Hype"],
-    year: 2018,
-    album: "Simmba",
-    duration: "3:32",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/_KhQT-LGb-4/hqdefault.jpg"
-  },
-  {
-    title: "Dil Chori",
-    singers: ["Yo Yo Honey Singh", "Simar Kaur"],
-    mood: ["Party", "Dance", "Wedding"],
-    year: 2018,
-    album: "Sonu Ke Titu Ki Sweety",
-    duration: "3:46",
-    language: "Punjabi",
-    thumbnail: "https://i.ytimg.com/vi/ZmDBbnmKpqQ/hqdefault.jpg"
-  }
+  title: "Faded",
+  singers: ["Alan Walker"],
+  mood: ["Sad", "Emotional", "Chill"],
+  year: 2015,
+  album: "Different World",
+  duration: "3:32",
+  language: "English",
+  thumbnail: "https://i.ytimg.com/vi/60ItHLz5WEA/hqdefault.jpg",
+  timeStamp: "10:05 PM"
+},
+{
+  title: "On My Way",
+  singers: ["Alan Walker", "Sabrina Carpenter"],
+  mood: ["Motivational", "Energetic", "Travel"],
+  year: 2019,
+  album: "Single",
+  duration: "3:13",
+  language: "English",
+  thumbnail: "https://i.ytimg.com/vi/dhYOPzcsbGM/hqdefault.jpg",
+  timeStamp: "6:40 PM"
+},
+{
+  title: "Raataan Lambiyan",
+  singers: ["Jubin Nautiyal", "Asees Kaur"],
+  mood: ["Romantic", "Calm", "Soft"],
+  year: 2021,
+  album: "Shershaah",
+  duration: "3:50",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/gvyUuxdRdR4/hqdefault.jpg",
+  timeStamp: "8:20 PM"
+},
+{
+  title: "Ranjha",
+  singers: ["B Praak", "Jasleen Royal"],
+  mood: ["Emotional", "Sad", "Romantic"],
+  year: 2021,
+  album: "Shershaah",
+  duration: "3:48",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/VuG7ge_8I2Y/hqdefault.jpg",
+  timeStamp: "9:10 PM"
+},
+{
+  title: "We Rollin",
+  singers: ["Shubh"],
+  mood: ["Hype", "Cool", "Chill"],
+  year: 2021,
+  album: "Single",
+  duration: "3:19",
+  language: "Punjabi",
+  thumbnail: "https://i.ytimg.com/vi/Ml9uJNF_kXk/hqdefault.jpg",
+  timeStamp: "5:55 PM"
+},
+{
+  title: "295",
+  singers: ["Sidhu Moose Wala"],
+  mood: ["Serious", "Real Talk", "Emotional"],
+  year: 2021,
+  album: "Moosetape",
+  duration: "4:10",
+  language: "Punjabi",
+  thumbnail: "https://i.ytimg.com/vi/7f0dQ5l3d7g/hqdefault.jpg",
+  timeStamp: "11:30 PM"
+},
+{
+  title: "Tera Ban Jaunga",
+  singers: ["Akhil Sachdeva", "Tulsi Kumar"],
+  mood: ["Romantic", "Soft", "Emotional"],
+  year: 2019,
+  album: "Kabir Singh",
+  duration: "3:56",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/wxNn6A7Z3zA/hqdefault.jpg",
+  timeStamp: "7:50 PM"
+},
+{
+  title: "Attention",
+  singers: ["Charlie Puth"],
+  mood: ["Chill", "Groovy", "Attitude"],
+  year: 2017,
+  album: "Voicenotes",
+  duration: "3:31",
+  language: "English",
+  thumbnail: "https://i.ytimg.com/vi/nfs8NYg7yQM/hqdefault.jpg",
+  timeStamp: "6:25 PM"
+},
+{
+  title: "See You Again",
+  singers: ["Wiz Khalifa", "Charlie Puth"],
+  mood: ["Emotional", "Sad", "Memories"],
+  year: 2015,
+  album: "Furious 7",
+  duration: "3:57",
+  language: "English",
+  thumbnail: "https://i.ytimg.com/vi/RgKAFK5djSk/hqdefault.jpg",
+  timeStamp: "9:45 PM"
+},
+{
+  title: "Gangnam Style",
+  singers: ["PSY"],
+  mood: ["Fun", "Dance", "Party"],
+  year: 2012,
+  album: "PSY 6",
+  duration: "3:39",
+  language: "Korean",
+  thumbnail: "https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg",
+  timeStamp: "8:05 PM"
+},
+{
+  title: "How You Like That",
+  singers: ["BLACKPINK"],
+  mood: ["Hype", "Powerful", "Energetic"],
+  year: 2020,
+  album: "The Album",
+  duration: "3:01",
+  language: "Korean",
+  thumbnail: "https://i.ytimg.com/vi/ioNng23DkIM/hqdefault.jpg",
+  timeStamp: "10:20 PM"
+},
+{
+  title: "Cheap Thrills",
+  singers: ["Sia"],
+  mood: ["Party", "Dance", "Fun"],
+  year: 2016,
+  album: "This Is Acting",
+  duration: "3:31",
+  language: "English",
+  thumbnail: "https://i.ytimg.com/vi/31crA53Dgu0/hqdefault.jpg",
+  timeStamp: "7:35 PM"
+},
+{
+  title: "Kar Gayi Chull",
+  singers: ["Badshah", "Neha Kakkar"],
+  mood: ["Party", "Dance", "Hype"],
+  year: 2016,
+  album: "Kapoor & Sons",
+  duration: "3:07",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/NTHz9ephYTw/hqdefault.jpg",
+  timeStamp: "9:00 PM"
+},
+{
+  title: "Abhi Toh Party Shuru Hui Hai",
+  singers: ["Badshah", "Aastha Gill"],
+  mood: ["Party", "Hype", "Dance"],
+  year: 2014,
+  album: "Khoobsurat",
+  duration: "2:59",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/8LZgzAZ2lpQ/hqdefault.jpg",
+  timeStamp: "10:10 PM"
+},
+{
+  title: "Nashe Si Chadh Gayi",
+  singers: ["Arijit Singh"],
+  mood: ["Party", "Dance", "Romantic"],
+  year: 2016,
+  album: "Befikre",
+  duration: "3:57",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/WD8u1kD3p6s/hqdefault.jpg",
+  timeStamp: "8:30 PM"
+},
+{
+  title: "London Thumakda",
+  singers: ["Neha Kakkar", "Sonu Kakkar"],
+  mood: ["Wedding", "Dance", "Fun"],
+  year: 2014,
+  album: "Queen",
+  duration: "3:50",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/udra3Mfw2oo/hqdefault.jpg",
+  timeStamp: "6:55 PM"
+},
+{
+  title: "Morni Banke",
+  singers: ["Guru Randhawa", "Neha Kakkar"],
+  mood: ["Dance", "Party", "Wedding"],
+  year: 2018,
+  album: "Badhaai Ho",
+  duration: "3:18",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/1Q4g1Qb4iRk/hqdefault.jpg",
+  timeStamp: "7:05 PM"
+},
+{
+  title: "Proper Patola",
+  singers: ["Diljit Dosanjh", "Badshah"],
+  mood: ["Party", "Cool", "Dance"],
+  year: 2018,
+  album: "Namaste England",
+  duration: "3:05",
+  language: "Punjabi",
+  thumbnail: "https://i.ytimg.com/vi/NRk7qKc8Q9Q/hqdefault.jpg",
+  timeStamp: "11:00 PM"
+},
+{
+  title: "High Heels",
+  singers: ["Yo Yo Honey Singh", "Jaz Dhami"],
+  mood: ["Party", "Dance", "Hype"],
+  year: 2016,
+  album: "Ki & Ka",
+  duration: "3:24",
+  language: "Punjabi",
+  thumbnail: "https://i.ytimg.com/vi/2d3p6yqXjLk/hqdefault.jpg",
+  timeStamp: "8:45 PM"
+},
+{
+  title: "Bom Diggy Diggy",
+  singers: ["Zack Knight", "Jasmin Walia"],
+  mood: ["Party", "Dance", "Fun"],
+  year: 2018,
+  album: "Sonu Ke Titu Ki Sweety",
+  duration: "3:58",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/KV7kJcR3p9A/hqdefault.jpg",
+  timeStamp: "9:25 PM"
+},
+{
+  title: "Aankh Marey",
+  singers: ["Neha Kakkar", "Mika Singh"],
+  mood: ["Party", "Dance", "Hype"],
+  year: 2018,
+  album: "Simmba",
+  duration: "3:32",
+  language: "Hindi",
+  thumbnail: "https://i.ytimg.com/vi/_KhQT-LGb-4/hqdefault.jpg",
+  timeStamp: "10:40 PM"
+},
+{
+  title: "Dil Chori",
+  singers: ["Yo Yo Honey Singh", "Simar Kaur"],
+  mood: ["Party", "Dance", "Wedding"],
+  year: 2018,
+  album: "Sonu Ke Titu Ki Sweety",
+  duration: "3:46",
+  language: "Punjabi",
+  thumbnail: "https://i.ytimg.com/vi/ZmDBbnmKpqQ/hqdefault.jpg",
+  timeStamp: "7:25 PM"
+}
   
 ];
 
