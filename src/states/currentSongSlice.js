@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import songs from "../components/song_pool";
+import songs from '../components/song_pool';
 
 const currentSongSlice = createSlice({
     name : "currentSong",

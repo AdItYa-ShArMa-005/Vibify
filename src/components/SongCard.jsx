@@ -4,7 +4,7 @@ const SongCard = ({ song }) => {
             <img src={song.thumbnail}></img>
             <h3 className="song-title">{song.title}</h3>
             <p className="singer">{song.singers.join(', ')}</p>
-            <p>{song.mood.join(', ')}</p>
+            {/* <p>{song.mood.join(', ')}</p> */}
         </div>
     );
 };
