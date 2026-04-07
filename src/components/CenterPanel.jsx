@@ -1,5 +1,4 @@
 import SongCard from "./SongCard";
-// import MusicPlayer from "./MusicPlayer";
 import {useSelector, useDispatch} from "react-redux";
 import { setCurrentSong } from "../states/currentSongSlice";
 import MoodSection from "./MoodSection";

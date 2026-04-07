@@ -1,15 +1,15 @@
-import flow from "../images/flow.png"
-import chill from "../images/chill.jpeg";
-import workout from "../images/workout.jpeg";
-import sad from "../images/sad.jpeg";
-import focus from "../images/focus.jpeg";
+// import ChillImg from '../images/Chill.jpeg';
+// import PartyImg from '../images/Party.jpeg';
+// import DanceImg from '../images/Dance.jpeg';
+// import RomanticImg from '../images/Romantic.jpeg';
+
 import {useDispatch, useSelector} from "react-redux";
 import { setCategory } from "../states/songCategorySlice";
 import { setSongList } from "../states/songListSlice";
 import songs from "./song_pool";
 
 
-const MoodSection = ({mood}) => {
+const MoodSection = ({mood,src}) => {
 
     const dispatch = useDispatch();
     const formattedTime = new Date().toLocaleTimeString("en-US", {hour: "numeric", minute: "2-digit", hour12: true});
@@ -33,7 +33,7 @@ const MoodSection = ({mood}) => {
     // dispatch(setSongList(songs.filter(song => calculateDifference(song.timeStamp))));
 
     function calculateDifference(songTime) {
-            const currentMinutes = convertToMinutes(formattedTime);
+        const currentMinutes = convertToMinutes(formattedTime);
             const songMinutes = convertToMinutes(songTime);
 
             let diff = Math.abs(currentMinutes - songMinutes);
@@ -45,11 +45,6 @@ const MoodSection = ({mood}) => {
     }
 
     function songHandler(id){
-
-        let l = songs.filter(song => calculateDifference(song.timeStamp));
-        console.log(l);
-        l = songs.filter(song => song.mood.includes(id));
-        console.log(l);
 
         if(id === category)
         {
@@ -68,7 +63,7 @@ const MoodSection = ({mood}) => {
     return (
         <div className="mood-icons">
             <button className="mood-icons" onClick={() => songHandler(mood)}>
-                <img src="../Images/${mood}.jpeg" alt={mood}/>
+                <img src={`/images/${mood}Img.jpeg`} alt={mood} />
             </button>
         </div>
     )

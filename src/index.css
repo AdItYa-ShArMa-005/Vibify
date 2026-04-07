@@ -313,14 +313,14 @@
 
 }
 
-/* .mood-icons img{
+.mood-icons img{
     height:100px;
     width: 100px;
     border : 2px solid black;
     border-radius: 50px;
     object-fit: cover;
 
-} */
+}
 
 .mood-icons{
     height : 100px;
