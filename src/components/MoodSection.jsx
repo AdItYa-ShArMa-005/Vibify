@@ -9,7 +9,7 @@ import { setSongList } from "../states/songListSlice";
 import songs from "./song_pool";
 
 
-const MoodSection = ({mood,src}) => {
+const MoodSection = ({mood}) => {
 
     const dispatch = useDispatch();
     const formattedTime = new Date().toLocaleTimeString("en-US", {hour: "numeric", minute: "2-digit", hour12: true});

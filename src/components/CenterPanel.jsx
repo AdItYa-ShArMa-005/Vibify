@@ -2,13 +2,24 @@ import SongCard from "./SongCard";
 import {useSelector, useDispatch} from "react-redux";
 import { setCurrentSong } from "../states/currentSongSlice";
 import MoodSection from "./MoodSection";
+import { useEffect, useState } from "react";
 
 const CenterPanel = () =>
 { 
     const listsongs = useSelector(state => state.songList.value);
     const dispatch = useDispatch();
-    // const allMoods = ["chill", "happy", "romantic", "energetic", "night drive", "sad", "emotional", "warm", "motivational","party", "feel good","soft", "dance", "hype"];
-    const allMoods = ["Chill", "Party", "Dance", "Romantic"];
+    const allMoods = ["Chill", "Happy", "Romantic", "Energetic", "Night Drive", "Sad", "Emotional", "Warm", "Motivational","Party", "Feel Good","Soft", "Dance", "Hype"];
+    const[slide,setSlide] = useState(0);
+
+    const moodPerSlide = 4;
+    const starting = moodPerSlide * slide ;
+    const end = moodPerSlide*(slide + 1);
+    const noOfSlides = Math.ceil(allMoods.length/moodPerSlide);
+
+    // useEffect(() => {
+    //     setSlide(0);
+    //     noOfSlides = Math.ceil(allMoods.length/moodPerSlide);
+    // },[allMoods]);
 
     
     return(
@@ -21,13 +32,19 @@ const CenterPanel = () =>
         {/* recommendation list */}
         
             <div className="song-container">
-                <div className="mood-bar">                    
+                <div className="mood-bar">  
+                    <button className="prv-btn" onClick={() => setSlide(slide-1)} disabled={slide === 0}>Prv</button>   
+                    <button className="mood-icons" onClick={() => {}}>
+                        <img src={`/images/flow.png`} alt={"surprise me!!"} />
+                    </button>
                     {
-                        allMoods.map((mood, index) => (
+                        allMoods.slice(starting,end).map((mood, index) => (
                             <MoodSection key={index} mood={mood} />
                         ))
 
                     }
+                    <button className="nxt-btn" onClick={() => setSlide(slide+1)} disabled={slide === noOfSlides-1}>Next</button>                
+
                         
                 </div>
 
