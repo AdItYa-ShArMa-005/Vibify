@@ -1,8 +1,13 @@
+// import {Routin}
+import { Link } from "react-router-dom";
 const LeftPanel = () =>
 {
     return(
         <div className="leftPanel">
-          Left Panel
+            
+               this is left panel
+                
+                
         </div>
     )
 }

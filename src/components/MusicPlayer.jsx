@@ -1,10 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentSong } from "../states/currentSongSlice";
+import {useState} from 'react';
+
 
 const  MusicPlayer = () => {
 
     const song = useSelector(state => state.currentSong.value);
     const songList = useSelector(state => state.songList.value);
+    const [liked,setLiked]=useState(false);
+    const [message,setMessage]=useState("");
+
     const dispatch = useDispatch();
 
     const nextSong = () => {
@@ -21,6 +26,15 @@ const  MusicPlayer = () => {
             return;
         else
             dispatch(setCurrentSong(songList[index-1]))
+    }
+    const toggleLike = () => {
+        if(liked) setMessage("Song removed from Library");
+        else setMessage("Song added to Library 🎵")
+        setLiked(!liked);
+        setTimeout(()=>{
+            setMessage("");
+        },2000);
+
     }
     return(
         <div className="musicplayer">
@@ -49,12 +63,19 @@ const  MusicPlayer = () => {
                     <button onClick={nextSong}>⏭</button>
                 </div>
             </div>
-
+            <div className="mess">
+                {
+                    message && <div className="toast">{message}</div>
+                }
+            </div>
             <div className="additional-buttons  ">
-                <button className="heart-icon"> ❤️ </button>
-                <button className="info">ℹ</button>
-                <button className="sound">🔊</button>
-                <button className="expand">↖</button>
+                <button className="heart-icon" onClick={toggleLike}>  {liked ? "❤️" : "🤍" } </button>
+                <img src="/images/info.png" className="info"></img>
+                <img src="/images/noise.png" className="noise"></img>
+                <img src="/images/expand.png" className="expand"></img>
+                
+                
+               
             </div>
         
         </div>
