@@ -1,11 +1,19 @@
 // import {Routin}
 import { Link } from "react-router-dom";
+
 const LeftPanel = () =>
 {
     return(
         <div className="leftPanel">
-            
-               this is left panel
+
+                <Link to="/" className="link">Home</Link>
+                <Link to="/Library" className="link">Library</Link>
+                <Link to="/Explore" className="link">Explore</Link>
+                <Link to="/Playlist" className="link">Playlist</Link>
+                <Link to="/Artists" className="link">Artists</Link>
+                <Link to="/Languages" className="link">Languages</Link>
+
+
                 
                 
         </div>

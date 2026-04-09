@@ -6,7 +6,8 @@ import Explore  from './components/Explore';
 import Playlist  from './components/Playlist';
 import MainArea from './components/MainArea';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import Artists from './components/Artists';
+import Languages from './components/Languages';
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
           <Route path="/Library" element={<Library />} />
           <Route path="/Explore" element={<Explore />} />
           <Route path="/Playlist" element={<Playlist />} />
+          <Route path="/Artists" element={<Artists/>}></Route>
+          <Route path="/Languages" element={<Languages/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
