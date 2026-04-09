@@ -561,7 +561,342 @@ const songs = [
     language: "Punjabi",
     thumbnail: "https://i.ytimg.com/vi/ZmDBbnmKpqQ/hqdefault.jpg"
   }
+  ,
+  {
+    title: "Night Changes",
+    singers: ["One Direction"],
+    mood: ["Night Drive", "Chill"],
+    year: 2014,
+    album: "Four",
+    duration: "3:46",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/syFZfO_wfMQ/hqdefault.jpg",
+    timeStamp: "11:45 PM"
+  },
+  {
+    title: "Drive",
+    singers: ["Oh Wonder"],
+    mood: ["Night Drive", "Chill"],
+    year: 2017,
+    album: "Ultralife",
+    duration: "3:20",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/_w5jPT8LMF0/hqdefault.jpg",
+    timeStamp: "12:10 AM"
+  },
+  {
+    title: "Sunflower",
+    singers: ["Post Malone"],
+    mood: ["Feel Good", "Chill"],
+    year: 2018,
+    album: "Spider-Man OST",
+    duration: "2:38",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/ApXoWvfEYVU/hqdefault.jpg",
+    timeStamp: "4:00 PM"
+  },
+  {
+    title: "Good Life",
+    singers: ["OneRepublic"],
+    mood: ["Feel Good", "Happy"],
+    year: 2011,
+    album: "Waking Up",
+    duration: "4:13",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/jZhQOvvV45w/hqdefault.jpg",
+    timeStamp: "5:10 PM"
+  },
+  {
+    title: "Till I Collapse",
+    singers: ["Eminem"],
+    mood: ["Workout", "Motivational"],
+    year: 2002,
+    album: "The Eminem Show",
+    duration: "4:57",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/Obim8BYGnOE/hqdefault.jpg",
+    timeStamp: "6:00 AM"
+  },
+  {
+    title: "Stronger",
+    singers: ["Kanye West"],
+    mood: ["Workout", "Energetic"],
+    year: 2007,
+    album: "Graduation",
+    duration: "5:12",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/PsO6ZnUZI0g/hqdefault.jpg",
+    timeStamp: "6:30 AM"
+  },
+  {
+    title: "Believer (Remix)",
+    singers: ["Imagine Dragons"],
+    mood: ["Workout", "Motivational"],
+    year: 2018,
+    album: "Single",
+    duration: "3:30",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/7wtfhZwyrcc/hqdefault.jpg",
+    timeStamp: "7:00 AM"
+  },
+  {
+    title: "Let Her Go",
+    singers: ["Passenger"],
+    mood: ["Sad", "Emotional"],
+    year: 2012,
+    album: "All the Little Lights",
+    duration: "4:12",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/RBumgq5yVrA/hqdefault.jpg",
+    timeStamp: "1:30 AM"
+  },
+  {
+    title: "Someone Like You",
+    singers: ["Adele"],
+    mood: ["Sad", "Emotional"],
+    year: 2011,
+    album: "21",
+    duration: "4:45",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/hLQl3WQQoQ0/hqdefault.jpg",
+    timeStamp: "2:00 AM"
+  },
+  {
+    title: "Kesariya (Lo-fi)",
+    singers: ["Arijit Singh"],
+    mood: ["Warm", "Chill"],
+    year: 2022,
+    album: "Brahmāstra",
+    duration: "3:00",
+    language: "Hindi",
+    thumbnail: "https://i.ytimg.com/vi/BddP6PYo2gs/hqdefault.jpg",
+    timeStamp: "7:30 PM"
+  },
+  {
+    title: "Shayad",
+    singers: ["Arijit Singh"],
+    mood: ["Warm", "Romantic"],
+    year: 2020,
+    album: "Love Aaj Kal",
+    duration: "4:07",
+    language: "Hindi",
+    thumbnail: "https://i.ytimg.com/vi/MJyKN-8UncM/hqdefault.jpg",
+    timeStamp: "8:20 PM"
+  },
+  {
+    title: "Hall of Fame",
+    singers: ["The Script"],
+    mood: ["Motivational", "Focus"],
+    year: 2012,
+    album: "Single",
+    duration: "3:22",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/mk48xRzuNvA/hqdefault.jpg",
+    timeStamp: "9:00 AM"
+  },
+  {
+    title: "Counting Stars",
+    singers: ["OneRepublic"],
+    mood: ["Focus", "Feel Good"],
+    year: 2013,
+    album: "Native",
+    duration: "4:17",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/hT_nvWreIhg/hqdefault.jpg",
+    timeStamp: "3:00 PM"
+  },
+  {
+    title: "Perfect Strangers (Acoustic)",
+    singers: ["Jonas Blue"],
+    mood: ["Chill", "Focus"],
+    year: 2016,
+    album: "Blue",
+    duration: "3:30",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/EkHTsc9PU2A/hqdefault.jpg",
+    timeStamp: "5:40 PM"
+  }
+
+
+  ,
+  {
+    title: "Until I Found You",
+    singers: ["Stephen Sanchez"],
+    mood: ["Romantic", "Warm"],
+    year: 2021,
+    album: "Easy On My Eyes",
+    duration: "2:57",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/GxldQ9eX2wo/hqdefault.jpg"
+  },
+ 
+ 
+  {
+    title: "Night Changes",
+    singers: ["One Direction"],
+    mood: ["Night drive", "Chill"],
+    year: 2014,
+    album: "Four",
+    duration: "3:46",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/syFZfO_wfMQ/hqdefault.jpg"
+  },
+  {
+    title: "The Night We Met",
+    singers: ["Lord Huron"],
+    mood: ["Night drive", "Sad"],
+    year: 2015,
+    album: "Strange Trails",
+    duration: "3:28",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/KtlgYxa6BMU/hqdefault.jpg"
+  },
+
+  {
+    title: "Uptown Funk",
+    singers: ["Bruno Mars"],
+    mood: ["Party", "Dance"],
+    year: 2014,
+    album: "Uptown Special",
+    duration: "4:30",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/OPf0YbXqDm0/hqdefault.jpg"
+  },
+  {
+    title: "Kala Chashma",
+    singers: ["Badshah", "Neha Kakkar"],
+    mood: ["Party", "Dance"],
+    year: 2016,
+    album: "Baar Baar Dekho",
+    duration: "3:07",
+    language: "Hindi",
+    thumbnail: "https://i.ytimg.com/vi/k4yXQkG2s1E/hqdefault.jpg"
+  },
+
   
+  {
+    title: "Let Me Down Slowly",
+    singers: ["Alec Benjamin"],
+    mood: ["Sad"],
+    year: 2018,
+    album: "Narrated for You",
+    duration: "2:49",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/50VNCymT-Cs/hqdefault.jpg"
+  },
+  {
+    title: "Agar Tum Saath Ho",
+    singers: ["Alka Yagnik", "Arijit Singh"],
+    mood: ["Sad", "Warm"],
+    year: 2015,
+    album: "Tamasha",
+    duration: "5:41",
+    language: "Hindi",
+    thumbnail: "https://i.ytimg.com/vi/sK7riqg2mr4/hqdefault.jpg"
+  },
+
+  
+  {
+    title: "Eye of the Tiger",
+    singers: ["Survivor"],
+    mood: ["Workout", "Motivational"],
+    year: 1982,
+    album: "Eye of the Tiger",
+    duration: "4:05",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/btPJPFnesV4/hqdefault.jpg"
+  },
+
+
+
+ 
+  {
+    title: "Good Time",
+    singers: ["Owl City", "Carly Rae Jepsen"],
+    mood: ["Feel good", "Flow"],
+    year: 2012,
+    album: "The Midsummer Station",
+    duration: "3:26",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/H7HmzwI67ec/hqdefault.jpg"
+  },
+  {
+    title: "Ilahi",
+    singers: ["Arijit Singh"],
+    mood: ["Flow", "Feel good"],
+    year: 2013,
+    album: "YJHD",
+    duration: "3:32",
+    language: "Hindi",
+    thumbnail: "https://i.ytimg.com/vi/fdubeMFwuGs/hqdefault.jpg"
+  },
+
+  {
+    title: "Experience",
+    singers: ["Ludovico Einaudi"],
+    mood: ["Focus"],
+    year: 2013,
+    album: "In a Time Lapse",
+    duration: "5:15",
+    language: "Instrumental",
+    thumbnail: "https://i.ytimg.com/vi/hN_q-_nGv4U/hqdefault.jpg"
+  },
+  {
+    title: "Weightless",
+    singers: ["Marconi Union"],
+    mood: ["Focus", "Chill"],
+    year: 2011,
+    album: "Weightless",
+    duration: "8:00",
+    language: "Instrumental",
+    thumbnail: "https://i.ytimg.com/vi/UfcAVejslrU/hqdefault.jpg"
+  },
+
+  // 🔥 Mix (Chill + Romantic + Flow)
+  {
+    title: "Perfect Duet",
+    singers: ["Ed Sheeran", "Beyonce"],
+    mood: ["Romantic", "Chill"],
+    year: 2017,
+    album: "Divide",
+    duration: "4:19",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/817P8W8-mGE/hqdefault.jpg"
+  },
+  {
+    title: "Kaise Hua",
+    singers: ["Vishal Mishra"],
+    mood: ["Romantic", "Chill"],
+    year: 2019,
+    album: "Kabir Singh",
+    duration: "3:54",
+    language: "Hindi",
+    thumbnail: "https://i.ytimg.com/vi/WWXm39leYew/hqdefault.jpg"
+  },
+
+  // 🕺 Dance / Party / Hype
+  {
+    title: "Titanium",
+    singers: ["David Guetta", "Sia"],
+    mood: ["Dance", "Motivational"],
+    year: 2011,
+    album: "Nothing but the Beat",
+    duration: "4:05",
+    language: "English",
+    thumbnail: "https://i.ytimg.com/vi/JRfuAukYTKg/hqdefault.jpg"
+  },
+  {
+    title: "Malang",
+    singers: ["Ved Sharma"],
+    mood: ["Dance", "Feel good"],
+    year: 2020,
+    album: "Malang",
+    duration: "4:37",
+    language: "Hindi",
+    thumbnail: "https://i.ytimg.com/vi/KBIq11mNB0I/hqdefault.jpg"
+  }
+
+
 ];
 
 export default songs;
