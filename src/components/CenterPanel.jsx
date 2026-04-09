@@ -8,6 +8,7 @@ const CenterPanel = () =>
 { 
     const listsongs = useSelector(state => state.songList.value);
     const dispatch = useDispatch();
+    //Make it global and check for new moods while fetching songs.
     const allMoods = ["Chill", "Happy", "Romantic", "Energetic", "Night Drive", "Sad", "Emotional", "Warm", "Motivational","Party", "Feel Good","Soft", "Dance", "Hype"];
     const[slide,setSlide] = useState(0);
 
