@@ -225,7 +225,10 @@ const Header = () => {
 
             {/* LOGO */}
             <div className="logo-section">
-                <img src="/images/logo.png" className="logo" alt="logo" />
+                    <Link to="/">
+                      <img src="/images/logo.png" className="logo" alt="logo" />
+                      </Link>
+              
             </div>
 
             {/* NAV LINKS */}

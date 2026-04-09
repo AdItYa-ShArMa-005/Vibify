@@ -33,7 +33,11 @@ const CenterPanel = () =>
             <div className="song-container">
                 <div className="mood-bar"> 
                     {   start>0 &&
-                        <button onClick={PrevMood}>⬅</button>  
+                        <button onClick={PrevMood} className="prevmood">
+                            {/* <img src="/images/left.png" ></img> */}
+                            {/* ← */}
+                            ❮
+                        </button>  
                     }                
                     {  
                         VisibleMoods.map((mood, index) => (
@@ -43,7 +47,12 @@ const CenterPanel = () =>
 
                     }
                     {
-                       start+5<allMoods.length && <button onClick={NextMood}>➡</button>
+                       start+5<allMoods.length && 
+                       <button onClick={NextMood} className="nextmood">
+                        {/* <img src="/images/right.png" ></img> */}
+                        {/* → */}
+                        ❯
+                       </button>
                     }
                    
 

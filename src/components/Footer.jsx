@@ -2,7 +2,7 @@ function Footer()
 {
     return(
         <footer className="footer">
-        Footer
+          Made with Love by CodeBeats ❤️
       </footer>
     )
 }
