@@ -2,49 +2,59 @@ import SongCard from "./SongCard";
 import {useSelector, useDispatch} from "react-redux";
 import { setCurrentSong } from "../states/currentSongSlice";
 import MoodSection from "./MoodSection";
-import { useEffect, useState } from "react";
-
+import {useState} from 'react';
 const CenterPanel = () =>
 { 
+    const [start,setStart]=useState(0);
     const listsongs = useSelector(state => state.songList.value);
     const dispatch = useDispatch();
-    //Make it global and check for new moods while fetching songs.
-    const allMoods = ["Chill", "Happy", "Romantic", "Energetic", "Night Drive", "Sad", "Emotional", "Warm", "Motivational","Party", "Feel Good","Soft", "Dance", "Hype"];
-    const[slide,setSlide] = useState(0);
-
-    const moodPerSlide = 4;
-    const starting = moodPerSlide * slide ;
-    const end = moodPerSlide*(slide + 1);
-    const noOfSlides = Math.ceil(allMoods.length/moodPerSlide);
-
-    // useEffect(() => {
-    //     setSlide(0);
-    //     noOfSlides = Math.ceil(allMoods.length/moodPerSlide);
-    // },[allMoods]);
-
-    
+    // const allMoods = ["chill", "happy", "romantic", "energetic", "night drive", "sad", "emotional", "warm", "motivational","party", "feel good","soft", "dance", "hype"];
+    const allMoods = ["Flow","Chill", "Party", "Romantic","Night drive","Focus","Warm","Sad","Workout","Feel good","Dance","Motivational"];
+    const VisibleMoods= allMoods.slice(start,start+5);
+    const NextMood=()=>{
+        if(start+5<allMoods.length){
+            setStart(start+5);
+        }
+    }
+    const PrevMood=()=>{
+        if(start-5>=0){
+            setStart(start-5);
+        }
+    }
     return(
         <div className="centerpanel">
             <h1 className="tagline">Your vibes , your tunes—let the music match your mood</h1>
             
-            <p >An infinite personalized mix of the music you love and new discoveries</p>
+            <p>An infinite personalized mix of the music you love and new discoveries</p>
 
 
         {/* recommendation list */}
         
             <div className="song-container">
-                <div className="mood-bar">  
-                    <button className="prv-btn" onClick={() => setSlide(slide-1)} disabled={slide === 0}>Prv</button>   
-                    <button className="mood-icons" onClick={() => {}}>
-                        <img src={`/images/flow.png`} alt={"surprise me!!"} />
-                    </button>
-                    {
-                        allMoods.slice(starting,end).map((mood, index) => (
+                <div className="mood-bar"> 
+                    {   start>0 &&
+                        <button onClick={PrevMood} className="prevmood">
+                            {/* <img src="/images/left.png" ></img> */}
+                            {/* ← */}
+                            ❮
+                        </button>  
+                    }                
+                    {  
+                        VisibleMoods.map((mood, index) => (
                             <MoodSection key={index} mood={mood} />
                         ))
 
+
                     }
-                    <button className="nxt-btn" onClick={() => setSlide(slide+1)} disabled={slide === noOfSlides-1}>Next</button>                
+                    {
+                       start+5<allMoods.length && 
+                       <button onClick={NextMood} className="nextmood">
+                        {/* <img src="/images/right.png" ></img> */}
+                        {/* → */}
+                        ❯
+                       </button>
+                    }
+                   
 
                         
                 </div>

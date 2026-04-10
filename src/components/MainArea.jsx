@@ -5,8 +5,9 @@ import songs from "./song_pool";
 const MainArea = () =>
 {  
     return(
-          <div className="main-content">
+      <div className="main-content">
             <div className="content">
+             <LeftPanel/>
               <CenterPanel/>
             </div>
             <div className="music">
