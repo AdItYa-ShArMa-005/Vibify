@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { GoogleGenAI } from "@google/genai";
 import { Link } from "react-router-dom";
 
+import { setCurrentSong } from "../states/currentSongSlice";
 const Header = () => {
 
     const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY });
@@ -77,15 +78,6 @@ const Header = () => {
               
             </div>
 
-            {/* NAV LINKS */}
-            <div className="heading">
-                <Link to="/">Home</Link>
-                <Link to="/Library">Library</Link>
-                <Link to="/Explore">Explore</Link>
-                <Link to="/Playlist">Playlist</Link>
-            </div>
-
-            {/* SEARCH */}
             <div className="inputfield">
                 <input
                     type="text"
@@ -103,7 +95,7 @@ const Header = () => {
                         {status && <p>{status}</p>}
 
                         {searchResults.map((song, index) => (
-                            <div key={index} className="search-item">
+                            <div key={index} className="search-item" onClick={()=>dispatch(setCurrentSong(song))}>
                                 <img src={song.thumbnail} alt="" />
                                 <p>{song.title}</p>
                             </div>

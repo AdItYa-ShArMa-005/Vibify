@@ -50,6 +50,7 @@ const MoodSection = ({mood}) => {
         {
             dispatch(setCategory("None"));
             dispatch(setSongList(songs.filter(song => calculateDifference(song.timeStamp))));
+            console.log("clicked again..");
         }
         else 
         {

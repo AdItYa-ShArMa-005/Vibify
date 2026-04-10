@@ -5,22 +5,18 @@ import MoodSection from "./MoodSection";
 import {useState} from 'react';
 const CenterPanel = () =>
 { 
-    const [start,setStart]=useState(0);
+    const [slide,setSlide]=useState(0);
     const listsongs = useSelector(state => state.songList.value);
     const dispatch = useDispatch();
-    // const allMoods = ["chill", "happy", "romantic", "energetic", "night drive", "sad", "emotional", "warm", "motivational","party", "feel good","soft", "dance", "hype"];
-    const allMoods = ["Flow","Chill", "Party", "Romantic","Night drive","Focus","Warm","Sad","Workout","Feel good","Dance","Motivational"];
-    const VisibleMoods= allMoods.slice(start,start+5);
-    const NextMood=()=>{
-        if(start+5<allMoods.length){
-            setStart(start+5);
-        }
-    }
-    const PrevMood=()=>{
-        if(start-5>=0){
-            setStart(start-5);
-        }
-    }
+    const allMoods = ["Flow","Chill", "Party", "Romantic","Night drive","Focus","Warm","Sad","Feel good","Dance","Motivational"];
+
+    const moodsPerSlide = 5;
+    const start = slide * moodsPerSlide;
+    const end = (slide + 1) * moodsPerSlide;
+    const noOfSlides = Math.ceil(allMoods.length / moodsPerSlide) ;
+
+    const VisibleMoods= allMoods.slice(start,end);
+
     return(
         <div className="centerpanel">
             <h1 className="tagline">Your vibes , your tunes—let the music match your mood</h1>
@@ -32,28 +28,23 @@ const CenterPanel = () =>
         
             <div className="song-container">
                 <div className="mood-bar"> 
-                    {   start>0 &&
-                        <button onClick={PrevMood} className="prevmood">
-                            {/* <img src="/images/left.png" ></img> */}
-                            {/* ← */}
-                            ❮
-                        </button>  
-                    }                
-                    {  
+                    <div className="toggle-btn">
+                        {   
+                            <button onClick={() =>setSlide(slide-1)}  disabled={slide === 0} className="toggle-slide">❮</button>  
+                        }    
+                    </div>            
+                    <div className="mood-section">
+                        {  
                         VisibleMoods.map((mood, index) => (
                             <MoodSection key={index} mood={mood} />
                         ))
-
-
                     }
-                    {
-                       start+5<allMoods.length && 
-                       <button onClick={NextMood} className="nextmood">
-                        {/* <img src="/images/right.png" ></img> */}
-                        {/* → */}
-                        ❯
-                       </button>
-                    }
+                    </div>
+                    <div className="toggle-btn">
+                        { 
+                            <button onClick={() => setSlide(slide+1)} disabled={slide+1 === noOfSlides} className="toggle-slide">❯</button>
+                        }
+                    </div>
                    
 
                         
