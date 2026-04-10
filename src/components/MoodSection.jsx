@@ -6,7 +6,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import { setCategory } from "../states/songCategorySlice";
 import { setSongList } from "../states/songListSlice";
-import songs from "./song_pool";
 
 
 const MoodSection = ({mood}) => {
@@ -14,7 +13,7 @@ const MoodSection = ({mood}) => {
     const dispatch = useDispatch();
     const formattedTime = new Date().toLocaleTimeString("en-US", {hour: "numeric", minute: "2-digit", hour12: true});
     const category = useSelector(state => state.Category.value);
-    const songList = useSelector(state => state.songList.value);
+    const songs = useSelector((state) => state.songPool.value);
 
     function convertToMinutes(timeStr) {
         let [time, modifier] = timeStr.split(" ");
@@ -50,7 +49,6 @@ const MoodSection = ({mood}) => {
         {
             dispatch(setCategory("None"));
             dispatch(setSongList(songs.filter(song => calculateDifference(song.timeStamp))));
-            console.log("clicked again..");
         }
         else 
         {
