@@ -4,16 +4,17 @@ import { setLikeSong, setDislikeSong } from "../states/likedSongsSlice";
 // export default MusicPlayer;
 import { setCurrentSong } from "../states/currentSongSlice";
 import { useState, useEffect, useRef } from 'react';
+import { toggleLike } from "../states/songpoolSlice";
 
 const MusicPlayer = () => {
     const song = useSelector(state => state.currentSong.value);
     const songList = useSelector(state => state.songList.value);
-    const [liked, setLiked] = useState(false);
     const [message, setMessage] = useState("");
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);         // 0 to 100
     const [currentTime, setCurrentTime] = useState("0:00");
     const [totalTime, setTotalTime] = useState("0:00");
+    const [clicked,setclicked] = useState(false);
 
     const playerRef = useRef(null);
     const playerReady = useRef(false);
@@ -130,12 +131,13 @@ const MusicPlayer = () => {
             dispatch(setCurrentSong(songList[index - 1]));
     };
 
-    const toggleLike = () => {
-        setMessage(liked ? "Song removed from Library" : "Song added to Library 💕");
-        (liked) ? dispatch(setDislikeSong(song)) : dispatch(setLikeSong(song)); 
-        setLiked(!liked);
-        setTimeout(() => setMessage(""), 3000);
-    };
+    const toggleLikes = () => {
+            setMessage(song.liked ? "Song removed from Library" : "Song added to Library 💕");
+            (song.liked) ? dispatch(setDislikeSong(song)) : dispatch(setLikeSong(song)); 
+            dispatch(toggleLike(song)); // updates pool
+            // dispatch(setCurrentSong({ ...song, liked: !song.liked })); // 🔥 fixes UI
+             setTimeout(() => setMessage(""), 3000);
+        };
 
     return (
         <div className="musicplayer">
@@ -172,8 +174,8 @@ const MusicPlayer = () => {
             </div>
 
             <div className="additional-buttons">
-                <button className="heart-icon" onClick={toggleLike}>
-                    {liked ? "❤️" : "🤍"}
+                <button className="heart-icon" onClick={toggleLikes}>
+                    {song.liked ? "❤️" : "🤍"}
                 </button>
                 <img src="/images/info.png" className="info" alt="" />
                 <img src="/images/noise.png" className="noise" alt="" />

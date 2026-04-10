@@ -1,9 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
-import songs from "../components/song_pool";
 
 const songListSlice = createSlice({
     name : "songList",
-    initialState : {value : songs},
+    initialState : {value : []},
     reducers : {
         setSongList : (state,action) => {
             state.value = action.payload;

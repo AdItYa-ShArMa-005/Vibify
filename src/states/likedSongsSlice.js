@@ -9,7 +9,7 @@ const likedSongSlice = createSlice({
         }),
 
         setDislikeSong :((state,action) => {
-            state.value = state.value.filter(song => song !== action.payload)
+            state.value = state.value.filter(song => song !== action.payload);
         }),
 
     } 
