@@ -322,11 +322,39 @@ body{
     height : 150px;
     display: flex;
     flex-direction: row;
-    gap:50px;
-    /* border: 2px solid black; */
-    justify-content: space-around;
+    gap:20px;
+    justify-content: space-between;
     align-items: center;
 
+}
+
+.mood-section{
+    padding: 10px;
+    width : 80%;
+    height : 150px;
+    display: flex;
+    flex-direction: row;
+    gap:200px;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.toggle-slide{
+    font-size: 35px;
+    border:none;
+    color:white;
+    background: transparent;
+    font-weight: bold;
+
+}
+
+.toggle-slide:disabled{
+    font-size: 35px;
+    border:none;
+    background: transparent;
+    font-weight: bold;
+    color : transparent;
 }
 
 .mood-icons img{
@@ -519,19 +547,7 @@ body{
 .songtitle{
     color: White;
 }
-.prevmood , .nextmood{
-    /* height:30px;
-    width:30px; */
-    /* filter: invert(1); */
 
-    /* background: transparent; */
-    font-size: 35px;
-    border:none;
-   color:white;
-   background: transparent;
-   font-weight: bold;
-
-}
 .mess{
     /* margin-right: 70px;
     z-index:5;
