@@ -4,7 +4,7 @@ import { setSongList } from "../states/songListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { GoogleGenAI } from "@google/genai";
 import { Link } from "react-router-dom";
-
+import { addSong } from "../states/songpoolSlice";
 import { setCurrentSong } from "../states/currentSongSlice";
 const Header = () => {
 
@@ -42,30 +42,54 @@ const Header = () => {
     };
 
     const fetchSong = async (songName) => {
-        setError("");
-        setFetching(true);
+    setError("");
+    setFetching(true);
 
-        try {
-            const response = await ai.models.generateContent({
-                model: "gemini-2.5-flash",
-                contents: `Give me a song ${songName} in JSON format`
-            });
+    try {
+        const response = await ai.models.generateContent({
+            model: "gemini-2.5-flash",
+            contents: `
+            Return ONLY valid JSON. No explanation.
 
-            const data = JSON.parse(response.text);
+            Give me details for the song "${songName}" in EXACTLY this format:
 
-            dispatch(setSongList([...songs, data]));
-            setStatus("Song added 🎵");
+            {
+            "title": "string",
+            "singers": ["string"],
+            "mood": ["string"],
+            "year": number,
+            "album": "string",
+            "duration": "string",
+            "language": "string",
+            "thumbnail": "string",
+            "timeStamp": "string",
+            "liked": false
+            }
+            `
+        });
 
-        } catch {
-            setStatus("Error fetching song");
-        }
+        let text = response.text;
+        text = text.replace(/```json|```/g, "").trim();
 
-        setFetching(false);
-        setTimeout(() => {
-            setStatus("");
-            setSearchInput("");
-        }, 2000);
-    };
+        const data = JSON.parse(text);
+        dispatch(addSong(data));
+        dispatch(setSongList([...songs, data]));
+        setStatus("Song added 🎵");
+
+    } 
+    catch (error) 
+    {
+        console.error(error);
+        setStatus("Error fetching song");
+    }
+
+    setFetching(false);
+
+    setTimeout(() => {
+        setStatus("");
+        setSearchInput("");
+    }, 2000);
+};
 
     return (
         <div className="header">
