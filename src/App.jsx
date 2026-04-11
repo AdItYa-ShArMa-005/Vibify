@@ -8,6 +8,7 @@ import MainArea from './components/MainArea';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Artists from './components/Artists';
 import Languages from './components/Languages';
+import Login from './components/Login';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
         <Header />
         
         <Routes>
-          <Route path="/" element={<MainArea/>} />
+          <Route path="/" element={<Login/>} />
           <Route path="/MainArea" element={<MainArea/>}></Route>
           <Route path="/Library" element={<Library />} />
           <Route path="/Explore" element={<Explore />} />

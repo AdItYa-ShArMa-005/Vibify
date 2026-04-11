@@ -40,7 +40,7 @@ const MoodSection = ({mood}) => {
             // handle edge case (midnight wrap)
             diff = Math.min(diff, 1440 - diff);
 
-            return diff <= 120; // 2 hours = 120 mins
+            return diff <= 240; // 2 hours = 120 mins
     }
 
     function songHandler(id){
