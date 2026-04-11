@@ -4,6 +4,11 @@ const likedSongSlice = createSlice({
     name : "likedSong",
     initialState : { value : []},
     reducers : {
+
+        setInitialLiked : ((state,action) => {
+            state.value = action.payload;
+        }),
+
         setLikeSong : ((state,action) => {
             state.value = [...state.value , action.payload];
         }),
@@ -15,5 +20,5 @@ const likedSongSlice = createSlice({
     } 
 });
 
-export const { setLikeSong , setDislikeSong } = likedSongSlice.actions;
+export const { setLikeSong , setDislikeSong, setInitialLiked } = likedSongSlice.actions;
 export default likedSongSlice.reducer;
