@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Artists from './components/Artists';
 import Languages from './components/Languages';
 import Login from './components/Login';
+import MusicPlayer from './components/MusicPlayer';
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
           <Route path="/Artists" element={<Artists/>}></Route>
           <Route path="/Languages" element={<Languages/>}></Route>
         </Routes>
+        <div className="music">
+              <MusicPlayer/>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

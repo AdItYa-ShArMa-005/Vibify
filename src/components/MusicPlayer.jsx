@@ -14,7 +14,6 @@ const MusicPlayer = () => {
     const [progress, setProgress] = useState(0);         // 0 to 100
     const [currentTime, setCurrentTime] = useState("0:00");
     const [totalTime, setTotalTime] = useState("0:00");
-    const [clicked,setclicked] = useState(false);
 
     const playerRef = useRef(null);
     const playerReady = useRef(false);
