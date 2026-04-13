@@ -23,7 +23,7 @@ const Login = () => {
     alert("Please fill all fields");
     return;
   }
-  navigate("/MainArea");
+  navigate("/Home");
 };
 
   return (
