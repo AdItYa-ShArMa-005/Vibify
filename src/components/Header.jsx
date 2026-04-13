@@ -6,6 +6,7 @@ import { GoogleGenAI } from "@google/genai";
 import { Link } from "react-router-dom";
 import { addSong } from "../states/songpoolSlice";
 import { setCurrentSong } from "../states/currentSongSlice";
+import LeftPanel from "./LeftPanel";
 const Header = () => {
 
     const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY });
@@ -75,6 +76,7 @@ const Header = () => {
         dispatch(addSong(data));
         dispatch(setSongList([...songs, data]));
         setStatus("Song added 🎵");
+        console.log(data);
 
     } 
     catch (error) 
@@ -92,7 +94,8 @@ const Header = () => {
 };
 
     return (
-        <div className="header">
+        <div className="outer-header">
+            <div className="header">
 
             {/* LOGO */}
             <div className="logo-section">
@@ -127,7 +130,8 @@ const Header = () => {
                     </div>
                 )}
             </div>
-
+        </div>
+            <LeftPanel/>
         </div>
     );
 };

@@ -22,7 +22,7 @@ const MainArea = () =>
       <div className="main-content">
             <div className="content">
               <Initialize/>
-             <LeftPanel/>
+             {/* <LeftPanel/> */}
               <CenterPanel/>
             </div>
             {/* <RightPanel/> */}

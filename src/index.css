@@ -34,7 +34,10 @@ body{
 
 }
 
-
+.outer-header{
+    display: flex;
+    flex-direction: column;
+}
 
 .header {
     display: flex;
@@ -42,7 +45,7 @@ body{
     align-items: center;
     padding: 0 40px;
     height: 70px;
-
+    z-index: 3000;
     background: rgba(20, 25, 35, 0.6);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -136,6 +139,7 @@ body{
     background: #111;
     border-radius: 10px;
     padding: 10px;
+    z-index: 2000;
 }
 
 .search-item {
@@ -169,23 +173,41 @@ body{
     
 }
 
-.leftPanel{
+/* .leftPanel{
     width: 200px;
-    /* background-color: rgb(217, 217, 245); */
+    height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: space-between;
     align-items: flex-start;
     flex-shrink:0;
     color:white;
     padding:10px 20px;
-    /* border-right:2px solid rgb(29, 114, 102); */
-    /* border-right: 2px solid #20B2AA;*/
     border-right: 2px solid #445a5a;
-} 
+}  */
+
+.leftPanel {
+    width: 100%;                 /* full width now */
+    height: auto;                /* no fixed height needed */
+
+    display: flex;
+    flex-direction: row;         /* 🔥 horizontal layout */
+    justify-content: center; /* items aligned left */
+    align-items: center;
+
+    gap: 10%;                   /* spacing between items */
+
+    padding: 10px 40px;
+    
+    background: rgba(20, 25, 35, 0.6);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid #445a5a; /* instead of right border */
+}
+
 .leftPanel a{
 
-    margin: 10px 0;
+    /* margin: 10px 0; */
+    margin: 0;
     font-size: 18px;
     text-decoration: none;
     color:white;
@@ -322,10 +344,9 @@ body{
     height : 150px;
     display: flex;
     flex-direction: row;
-    gap:20px;
+    gap:10%;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .mood-section{
@@ -334,7 +355,7 @@ body{
     height : 150px;
     display: flex;
     flex-direction: row;
-    gap:200px;
+    gap:15%;
     justify-content: flex-start;
     align-items: center;
 

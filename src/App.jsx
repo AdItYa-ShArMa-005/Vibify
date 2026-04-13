@@ -20,7 +20,7 @@ function App() {
         
         <Routes>
           <Route path="/" element={<Login/>} />
-          <Route path="/MainArea" element={<MainArea/>}></Route>
+          <Route path="/Home" element={<MainArea/>}></Route>
           <Route path="/Library" element={<Library />} />
           <Route path="/Explore" element={<Explore />} />
           <Route path="/Liked_songs" element={<LikedSongs />} />
