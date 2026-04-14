@@ -171,12 +171,12 @@ const MusicPlayer = () => {
 
             <div className="information">
                 <div className="progress-bar">
-                    <div className="outer" onClick={handleSeek} style={{ cursor: "pointer" }}>
+                  
+                    <div className="outer" onClick={handleSeek} style={{ cursor: 'pointer' }}>
                         <div className="inner" style={{ width: `${progress}%` }}></div>
                     </div>
-                    <div className="song-duration">
-                        {currentTime} / {totalTime}
-                    </div>
+                 
+                    <div className="song-duration">{currentTime} / {totalTime}</div>
                 </div>
 
                 <div className="control-buttons">
