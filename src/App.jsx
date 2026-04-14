@@ -27,9 +27,6 @@ function App() {
           <Route path="/Artists" element={<Artists/>}></Route>
           <Route path="/Languages" element={<Languages/>}></Route>
         </Routes>
-        <div className="music">
-              <MusicPlayer/>
-        </div>
         <Footer />
       </BrowserRouter>
     </div>

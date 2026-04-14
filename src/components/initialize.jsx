@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setInitialLiked } from "../states/likedSongsSlice";
-import { setInitialList } from "../states/songListSlice";
+import { setInitialList,setSongList } from "../states/songListSlice";
 import { calculateDifference } from "./calculateDifference";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { setCurrentSong } from "../states/currentSongSlice";
 
 const Initialize = () => {
     const dispatch = useDispatch();
@@ -15,14 +16,14 @@ const Initialize = () => {
     const likedSong = useSelector(state => state.likedSongs.value);
 
     useEffect(()=>{
-        dispatch(setInitialLiked(songPool.filter(song => song.liked === true)));
-        dispatch(setInitialList(songPool.filter(song => calculateDifference(song.timeStamp))));
-    },[]);
+        // dispatch(setInitialLiked(songPool.filter(song => song.liked === true)));
+        dispatch(setSongList(songPool.filter(song => calculateDifference(song.timeStamp))));
+        },[]);
 
-    useEffect(()=>{
-        console.log("category changed to " + category);
-        console.log("in initialize");
-    },[category]);
+    // useEffect(()=>{
+    //     console.log("category changed to " + category);
+    //     console.log("in initialize");
+    // },[category]);
 
     useEffect(()=>{
         dispatch(setInitialLiked(songPool.filter(song => song.liked === true)));
@@ -30,11 +31,11 @@ const Initialize = () => {
 
     useEffect(() => {
         if(category === "likedSong")
-            dispatch(setInitialList(likedSong));
+            dispatch(setSongList(likedSong));
         else if(category === "None")
-            dispatch(setInitialList(songPool.filter(song => calculateDifference(song.timeStamp))));
+            dispatch(setSongList(songPool.filter(song => calculateDifference(song.timeStamp))));
         else
-            dispatch(setInitialList(songPool.filter(song => song.mood.includes(category))));
+            dispatch(setSongList(songPool.filter(song => song.mood.includes(category))));
     },[songPool,category]);
 
 

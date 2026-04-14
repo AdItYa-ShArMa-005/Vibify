@@ -26,7 +26,9 @@ const MainArea = () =>
               <CenterPanel/>
             </div>
             {/* <RightPanel/> */}
-           
+           <div className="music">
+              <MusicPlayer/>
+        </div>
       </div>
     )
 }
