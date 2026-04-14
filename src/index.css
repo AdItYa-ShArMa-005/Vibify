@@ -58,42 +58,6 @@ body{
     object-fit: contain;
 }
 
-/* LINKS */
-/* .heading {
-    display: flex;
-    gap: 50px;
-}
-
-.heading a {
-    text-decoration: none;
-    color: #bbb;
-    font-size: 16px;
-    transition: 0.3s;
-    position: relative;
-    letter-spacing: 1px;
-}
-
-.heading a:hover {
-    color: #63ffdb;
-}
-
-/* underline animation */
-/* .heading a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background: #63ffdb;
-    transition: 0.3s;
-}
-
-.heading a:hover::after {
-    width: 100%;
-} */ 
-
-/* SEARCH */
 .inputfield {
     position: relative;
     width:600px;
@@ -441,7 +405,7 @@ body{
   transform: scale(1.15);
 }
 .musicplayer img{
-    filter: invert(1);
+    /* filter: invert(1); */
 
 }
 .description{
