@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [entry, setEntry] = useState("email");
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    phoneN: "",
   });
 
   const handleChange = (e) => {
@@ -14,45 +17,86 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
-  
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!formData.email || !formData.password) {
-    alert("Please fill all fields");
-    return;
-  }
-  navigate("/Home");
-};
+    navigate("/Home");
+  };
 
   return (
     <div style={styles.container}>
-      <form style={styles.form} onSubmit={handleSubmit}>
-        <h2>Login</h2>
+  
+      <img
+        src="/images/lataM.png"
+        alt="Lata Mangeshkar"
+        style={styles.image}
+      />
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter email"
-          value={formData.email}
-          onChange={handleChange}
-          style={styles.input}
-        />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter password"
-          value={formData.password}
-          onChange={handleChange}
-          style={styles.input}
-        />
+      <div style={styles.right}>
+        <form style={styles.form} onSubmit={handleSubmit}>
+          <h1 style={styles.heading}>Welcome Back </h1>
+          <img src="/images/logo.png"></img>
 
-        <button type="submit" style={styles.button}>
-          Login
-        </button>
-      </form>
+          
+          {entry === "email" ? (
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter email"
+              value={formData.email}
+              onChange={handleChange}
+              style={styles.input}
+              required
+            />
+          ) : (
+            <input
+              type="tel"
+              name="phoneN"
+              placeholder="Enter phone number"
+              value={formData.phoneN}
+              onChange={handleChange}
+              style={styles.input}
+              required
+            />
+          )}
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            value={formData.password}
+            onChange={handleChange}
+            style={styles.input}
+            required
+          />
+
+          <button type="submit" style={styles.button}>
+            Login
+          </button>
+
+          <p style={{ textAlign: "center", color: "white" }}>or</p>
+
+          {entry === "email" ? (
+            <button
+              type="button"
+              style={styles.toggleBtn}
+              onClick={() => setEntry("ph")}
+            >
+              Continue with phone number
+            </button>
+          ) : (
+            <button
+              type="button"
+              style={styles.toggleBtn}
+              onClick={() => setEntry("email")}
+            >
+              Continue with Email
+            </button>
+          )}
+        </form>
+      </div>
     </div>
   );
 };
@@ -60,28 +104,65 @@ const Login = () => {
 const styles = {
   container: {
     display: "flex",
+    height: "800px",
+    width: "100vw",
+    background: "radial-gradient(circle at top, #1d3444, #14212f 60%)",
+    
+  },
+
+  image: {
+    width: "60%",
+    height: "100%",
+    objectFit: "contain",
+  },
+
+  right: {
+    width: "50%",
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
   },
+
   form: {
     display: "flex",
     flexDirection: "column",
-    width: "300px",
-    gap: "10px",
-    padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
+    width: "350px",
+    gap: "15px",
+    padding: "30px",
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderRadius: "12px",
+    backdropFilter: "blur(10px)",
   },
+
+  heading: {
+    color: "white",
+    textAlign: "center",
+  },
+
   input: {
-    padding: "10px",
+    padding: "12px",
     fontSize: "16px",
+    borderRadius: "8px",
+    border: "none",
+    outline: "none",
   },
+
   button: {
-    padding: "10px",
-    backgroundColor: "blue",
+    padding: "12px",
+    background: "linear-gradient(45deg, #4facfe, #00f2fe)",
     color: "white",
     border: "none",
+    borderRadius: "8px",
+    cursor: "pointer",
+    fontWeight: "bold",
+  },
+
+  toggleBtn: {
+    padding: "10px",
+    background: "transparent",
+    color: "#4facfe",
+    border: "1px solid #4facfe",
+    borderRadius: "8px",
     cursor: "pointer",
   },
 };

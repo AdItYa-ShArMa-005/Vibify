@@ -155,11 +155,11 @@ const MusicPlayer = () => {
 
             <div className="information">
                 <div className="progress-bar">
-                    {/* ✅ Click karke seek kar sakte ho */}
+                  
                     <div className="outer" onClick={handleSeek} style={{ cursor: 'pointer' }}>
                         <div className="inner" style={{ width: `${progress}%` }}></div>
                     </div>
-                    {/* ✅ Real time dikhega */}
+                 
                     <div className="song-duration">{currentTime} / {totalTime}</div>
                 </div>
                 <div className="control-buttons">
