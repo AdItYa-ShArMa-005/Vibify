@@ -1,24 +1,26 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setLikeSong, setDislikeSong } from "../states/likedSongsSlice";
-
-// export default MusicPlayer;
 import { setCurrentSong } from "../states/currentSongSlice";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 import { toggleLike } from "../states/songpoolSlice";
 
 const MusicPlayer = () => {
 
     const song = useSelector(state => state.currentSong.value);
     const songList = useSelector(state => state.songList.value);
+
     const [message, setMessage] = useState("");
     const [isPlaying, setIsPlaying] = useState(false);
-    const [progress, setProgress] = useState(0);         // 0 to 100
+    const [progress, setProgress] = useState(0);
     const [currentTime, setCurrentTime] = useState("0:00");
     const [totalTime, setTotalTime] = useState("0:00");
 
+    // ✅ SINGLE SOURCE OF TRUTH
+    const [isLiked, setIsLiked] = useState(song.liked);
+
     const playerRef = useRef(null);
     const playerReady = useRef(false);
-    const intervalRef = useRef(null); // timer store karne ke liye
+    const intervalRef = useRef(null);
+
     const dispatch = useDispatch();
 
     const getVideoId = (thumbnail) => {
@@ -29,7 +31,10 @@ const MusicPlayer = () => {
         }
     };
 
-    // seconds ko "3:53" format mein convert karo
+    useEffect(()=>{
+        setIsLiked(song.liked);
+    },[song]);
+
     const formatTime = (seconds) => {
         if (!seconds || isNaN(seconds)) return "0:00";
         const m = Math.floor(seconds / 60);
@@ -37,15 +42,14 @@ const MusicPlayer = () => {
         return `${m}:${s < 10 ? '0' + s : s}`;
     };
 
-    // har second progress update karo
     const startProgressTracker = () => {
-        // pehle wala interval band karo
         if (intervalRef.current) clearInterval(intervalRef.current);
 
         intervalRef.current = setInterval(() => {
             if (playerRef.current && playerReady.current) {
                 const current = playerRef.current.getCurrentTime();
                 const total = playerRef.current.getDuration();
+
                 if (total > 0) {
                     setProgress((current / total) * 100);
                     setCurrentTime(formatTime(current));
@@ -57,20 +61,20 @@ const MusicPlayer = () => {
 
     useEffect(() => {
         const initPlayer = () => {
-            playerRef.current = new window.YT.Player('yt-player', {
-                height: '1',
-                width: '1',
+            playerRef.current = new window.YT.Player("yt-player", {
+                height: "1",
+                width: "1",
                 videoId: getVideoId(song.thumbnail),
-                playerVars: { autoplay: 1 },
+                playerVars: { autoplay: 0 },
                 events: {
                     onReady: () => {
                         playerReady.current = true;
-                        startProgressTracker(); // player ready hote hi tracker shuru
+                        startProgressTracker();
                     },
                     onStateChange: (e) => {
                         setIsPlaying(e.data === window.YT.PlayerState.PLAYING);
-                    }
-                }
+                    },
+                },
             });
         };
 
@@ -89,6 +93,7 @@ const MusicPlayer = () => {
 
     useEffect(() => {
         if (!playerReady.current) return;
+
         const videoId = getVideoId(song.thumbnail);
         if (videoId) {
             playerRef.current.loadVideoById(videoId);
@@ -99,19 +104,21 @@ const MusicPlayer = () => {
         }
     }, [song]);
 
-    // progress bar click karo to seek karo
     const handleSeek = (e) => {
         if (!playerReady.current) return;
+
         const bar = e.currentTarget;
         const clickX = e.clientX - bar.getBoundingClientRect().left;
         const width = bar.offsetWidth;
         const percent = clickX / width;
+
         const total = playerRef.current.getDuration();
         playerRef.current.seekTo(percent * total, true);
     };
 
     const togglePlay = () => {
         if (!playerReady.current) return;
+
         if (isPlaying) {
             playerRef.current.pauseVideo();
         } else {
@@ -119,29 +126,38 @@ const MusicPlayer = () => {
         }
     };
 
+    // ✅ FIXED INDEX LOGIC
     const nextSong = () => {
-        let index = songList.indexOf(song);
-        if (index < songList.length - 1)
-            dispatch(setCurrentSong(songList[index + 1]));
+        let index = songList.findIndex(s => s.title === song.title);
+        dispatch(setCurrentSong(songList[index + 1]));
     };
 
     const prvSong = () => {
-        let index = songList.indexOf(song);
-        if (index > 0)
+        let index = songList.findIndex(s => s.title === song.title);
             dispatch(setCurrentSong(songList[index - 1]));
     };
 
+    // ✅ CLEAN LIKE TOGGLE
     const toggleLikes = () => {
-            setMessage(song.liked ? "Song removed from Library" : "Song added to Library 💕");
-            (song.liked) ? dispatch(setDislikeSong(song)) : dispatch(setLikeSong(song)); 
-            dispatch(toggleLike(song)); // updates pool
-            // dispatch(setCurrentSong({ ...song, liked: !song.liked })); // 🔥 fixes UI
-             setTimeout(() => setMessage(""), 3000);
-        };
+        setMessage(isLiked ? "Song removed from Library" : "Song added to Library 💕");
+        setIsLiked(!isLiked);
+        dispatch(toggleLike(song));
+
+        setTimeout(() => setMessage(""), 1000);
+    };
 
     return (
         <div className="musicplayer">
-            <div id="yt-player" style={{ position: 'fixed', top: '-9999px', left: '-9999px', width: '1px', height: '1px' }}></div>
+            <div
+                id="yt-player"
+                style={{
+                    position: "fixed",
+                    top: "-9999px",
+                    left: "-9999px",
+                    width: "1px",
+                    height: "1px",
+                }}
+            ></div>
 
             <div className="description">
                 <div className="image">
@@ -149,23 +165,35 @@ const MusicPlayer = () => {
                 </div>
                 <div className="song-desc">
                     <div>{song.title}</div>
-                    <div>{song.singers.join(', ')}</div>
+                    <div>{song.singers.join(", ")}</div>
                 </div>
             </div>
 
             <div className="information">
                 <div className="progress-bar">
-                    {/* ✅ Click karke seek kar sakte ho */}
-                    <div className="outer" onClick={handleSeek} style={{ cursor: 'pointer' }}>
+                    <div className="outer" onClick={handleSeek} style={{ cursor: "pointer" }}>
                         <div className="inner" style={{ width: `${progress}%` }}></div>
                     </div>
-                    {/* ✅ Real time dikhega */}
-                    <div className="song-duration">{currentTime} / {totalTime}</div>
+                    <div className="song-duration">
+                        {currentTime} / {totalTime}
+                    </div>
                 </div>
+
                 <div className="control-buttons">
-                    <button onClick={prvSong}>⏮</button>
-                    <button onClick={togglePlay}>{isPlaying ? '⏸' : '▶'}</button>
-                    <button onClick={nextSong}>⏭</button>
+                    <button disabled={songList.findIndex(s => s.title === song.title) === 0} onClick={() => prvSong()}>
+                        ⏮
+                    </button>
+
+                    <button onClick={togglePlay}>
+                        {isPlaying ? "⏸" : "▶"}
+                    </button>
+
+                    <button
+                        disabled={songList.findIndex(s => s.title === song.title) === songList.length - 1}
+                        onClick={nextSong}
+                    >
+                        ⏭
+                    </button>
                 </div>
             </div>
 
@@ -175,8 +203,9 @@ const MusicPlayer = () => {
 
             <div className="additional-buttons">
                 <button className="heart-icon" onClick={toggleLikes}>
-                    {song.liked ? "❤️" : "🤍"}
+                    {isLiked ? "❤️" : "🤍"}
                 </button>
+
                 <img src="/images/info.png" className="info" alt="" />
                 <img src="/images/noise.png" className="noise" alt="" />
                 <img src="/images/expand.png" className="expand" alt="" />
