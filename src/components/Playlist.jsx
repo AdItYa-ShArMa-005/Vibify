@@ -2,8 +2,8 @@ const Playlist = () => {
     return(
         <div className="playlist">
             <div className="playlist-header">
-                <h2>Your Playlists</h2>
-                <p>Create and manage your playlists.</p>
+                <h2>Customize your own Playlists</h2>
+                <button>Click to create playlist</button>
             </div>
         </div>
     )
