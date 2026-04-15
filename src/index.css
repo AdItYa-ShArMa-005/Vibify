@@ -565,3 +565,68 @@ body{
     border-top: 1px solid rgba(255,255,255,0.1);
     /* margin-top: calc(100vh - 70px); */
 }
+.library {
+  padding: 20px;
+  background-color: #121212;
+  min-height: 100vh;
+  color: white;
+}
+
+.library-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.library-header h2 {
+  font-size: 28px;
+}
+
+.library-header p {
+  color: gray;
+}
+
+.songs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.song-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.song-card:hover {
+  background-color: #2a2a2a;
+}
+
+.song-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.song-index {
+  width: 20px;
+}
+
+.song-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.song-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.heart {
+  cursor: pointer;
+  font-size: 18px;
+}
