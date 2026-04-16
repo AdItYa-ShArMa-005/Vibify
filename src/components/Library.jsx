@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import LibrarySongCard from "../components/LibrarySongCard";
 
 const Library = () => {
-    const songs = useSelector((state) => state.songPool.value);
+     const songs = useSelector(state => state.songPool.value);
 
     return (
         <div className="library">
