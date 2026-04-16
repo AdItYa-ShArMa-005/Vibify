@@ -34,6 +34,7 @@ const MoodSection = ({mood}) => {
         <div className="mood-icons">
             <button className="mood-icons" onClick={() => songHandler(mood)}>
                 <img src={`/images/${mood}.jpeg`} alt={mood} />
+                
                 <div className="songtitle">{mood}</div>
             </button>
         </div>
