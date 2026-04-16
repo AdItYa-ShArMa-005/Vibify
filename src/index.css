@@ -257,41 +257,52 @@ body{
     background: transparent;
 }
 .songcard {
-    /* border: none; */
-    /* flex: 0 0 auto;      prevents shrinking */
-    width: 200px;
-    height: max-content;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
-    /* background: #e36a6a;  */
-    border-radius: 8px;
-    /* box-shadow: 0 2px 6px rgba(0,0,0,0.1); */
-    
+  width: 230px;
+  padding: 15px;
+  border-radius: 18px;
+  margin:10px;
+  background: #1e293b;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
+
+.songcard:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+}
+
+/* Image styling */
 .songcard img {
-    width: 150px;
-    /* height: 150px; */
-    
-    object-fit: cover;
-    
-    border-radius: 8px;
-
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 12px 30px rgb(51, 68, 64);
 }
 
-/* .centerpanel {
-    width: calc(100vw - 170px); 
-    display: flex;
-    padding: 20px 30px 20px 20px;
-    gap: 10px;
-    flex-direction: column;
+/* Title */
+.song-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
 
-} */
-
+/* Singer */
+.singer {
+  font-size: 14px;
+  color: #94a3b8;
+}
 .line{
     width:800px;
     align-items: center;
@@ -629,4 +640,59 @@ body{
 .heart {
   cursor: pointer;
   font-size: 18px;
+}
+.language {
+  padding: 20px 40px;
+  background: #0f172a; /* dark background */
+  min-height: 100vh;
+  color: white;
+}
+
+.language h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+/* Each language section */
+.lang-container {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.lang {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #38bdf8;
+
+  text-align: center;
+
+  background: linear-gradient(135deg, #1f2c40, #0f172a);
+  padding: 12px 20px;
+  border-radius: 12px;
+
+  display: inline-block;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+
+  transition: all 0.3s ease;
+}
+
+/* Hover effect ✨ */
+.lang:hover {
+  transform: scale(1.05);
+  color: #7dd3fc;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+}
+
+/* Songs grid */
+.lang-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.lang-container > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
 }

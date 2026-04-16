@@ -137,12 +137,11 @@ const MusicPlayer = () => {
             dispatch(setCurrentSong(songList[index - 1]));
     };
 
-    // ✅ CLEAN LIKE TOGGLE
+
     const toggleLikes = () => {
-        setMessage(isLiked ? "Song removed from Library" : "Song added to Library 💕");
+        setMessage(isLiked ? "Song removed from Liked Songs" : "Song added to Liked Songs 💕");
         setIsLiked(!isLiked);
         dispatch(toggleLike(song));
-
         setTimeout(() => setMessage(""), 1000);
     };
 
