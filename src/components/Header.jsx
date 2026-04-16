@@ -3,12 +3,13 @@ import { useState } from "react";
 import { setSongList } from "../states/songListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { GoogleGenAI } from "@google/genai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addSong } from "../states/songpoolSlice";
 import { setCurrentSong } from "../states/currentSongSlice";
 import LeftPanel from "./LeftPanel";
-const Header = () => {
 
+const Header = () => {
+    const navigate = useNavigate();
     const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY1 });
 
     const [searchInput, setSearchInput] = useState("");
@@ -129,6 +130,10 @@ const Header = () => {
                         ))}
                     </div>
                 )}
+            </div>
+
+            <div style={{height : 20, width : 40}}>
+                <button style={{fontSize : 20, color : "white", backgroundColor : "red", padding : 2, textAlign : "center", borderRadius : 10}} onClick={() => navigate("/")}>Logout</button>
             </div>
         </div>
             <LeftPanel/>

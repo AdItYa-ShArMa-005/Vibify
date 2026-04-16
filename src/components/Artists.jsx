@@ -33,7 +33,6 @@ const Artists=()=>{
                 }
             });
         });
-        console.log(li.slice(0,5));
         setArtists(li);
     },[]);
 
@@ -67,8 +66,6 @@ const Artists=()=>{
         setArtists(li);
     },[songPool]);
 
-
-    console.log(artists.slice(0,5));
     return(
         <div className="library">
             <div className="library-header">

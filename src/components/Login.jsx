@@ -1,14 +1,15 @@
+import { FolderMinus } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
   const [entry, setEntry] = useState("email");
+  const [message, setMessage] = useState("");
 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    phoneN: "",
   });
 
   const handleChange = (e) => {
@@ -20,8 +21,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    navigate("/Home");
+    if(formData.email === "codeBeats@vibify.com" && formData.password === "password123")
+      navigate("/Home");
+    else
+      setMessage("Invalid email or Password !!! ");
   };
 
   return (
@@ -29,9 +32,12 @@ const Login = () => {
 
       
         <form style={styles.form} onSubmit={handleSubmit}>
-          <h1 style={styles.heading}>Welcome Back </h1>
+          <h1 style={styles.heading}>Welcome User </h1>
           <img src="/images/logo.png"></img>
-
+          <div style={{fontSize : 15, color : "red", textAlign : "center"}}>
+            <h3>email : codeBeats@vibify.com</h3>
+            <h3>password : password123</h3>
+          </div>
           
           {entry === "email" ? (
             <input
@@ -64,6 +70,8 @@ const Login = () => {
             style={styles.input}
             required
           />
+
+          {message && <div style={{fontSize : 15, color : "red", textAlign : "center"}}>{message}</div>}
 
           <button type="submit" style={styles.button}>
             Login
