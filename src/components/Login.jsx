@@ -26,15 +26,8 @@ const Login = () => {
 
   return (
     <div style={styles.container}>
-  
-      <img
-        src="/images/lataM.png"
-        alt="Lata Mangeshkar"
-        style={styles.image}
-      />
 
-
-      <div style={styles.right}>
+      
         <form style={styles.form} onSubmit={handleSubmit}>
           <h1 style={styles.heading}>Welcome Back </h1>
           <img src="/images/logo.png"></img>
@@ -97,7 +90,7 @@ const Login = () => {
           )}
         </form>
       </div>
-    </div>
+   
   );
 };
 
@@ -106,22 +99,18 @@ const styles = {
     display: "flex",
     height: "800px",
     width: "100vw",
-    background: "radial-gradient(circle at top, #1d3444, #14212f 60%)",
-    
+    background: " radial-gradient(#1d3444 ,#1d3544) ",
+    alignItems:"center",
+    justifyContent:"center"
   },
 
-  image: {
-    width: "60%",
-    height: "100%",
-    objectFit: "contain",
-  },
+  // image: {
+  //   width: "60%",
+  //   height: "100%",
+  //   objectFit: "contain",
+  // },
 
-  right: {
-    width: "50%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  
 
   form: {
     display: "flex",
