@@ -9,7 +9,7 @@ import { setCurrentSong } from "../states/currentSongSlice";
 import LeftPanel from "./LeftPanel";
 const Header = () => {
 
-    const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY });
+    const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY1 });
 
     const [searchInput, setSearchInput] = useState("");
     const [error, setError] = useState("");
