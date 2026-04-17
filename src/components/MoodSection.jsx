@@ -42,3 +42,4 @@ const MoodSection = ({mood}) => {
 }
 
 export default MoodSection;
+
