@@ -691,7 +691,13 @@ body{
   flex-direction: column;
 }
 
-.lang-container > div:last-child {
+/* .lang-container > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+} */
+
+.song-grid{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;

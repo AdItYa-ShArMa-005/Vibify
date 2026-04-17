@@ -1,10 +1,14 @@
 import { useSelector } from "react-redux";
-
+import {useState} from 'react';
 import LibrarySongCard from "../components/LibrarySongCard";
+import SongCard from "./SongCard";
 
 const Library = () => {
-     const songs = useSelector(state => state.songPool.value);
-
+    const songs = useSelector(state => state.songPool.value);
+    const[ slide, setSlide] = useState(0);
+    const songsPerSlide = 15;
+    const start = slide * songsPerSlide;
+    const noOfSlides = Math.ceil(songs.length/songsPerSlide); 
     return (
         <div className="library">
             <div className="library-header">
@@ -12,12 +16,17 @@ const Library = () => {
                 <p>All your saved songs, playlists, and albums in one place.</p>
             </div>
 
-            <div className="songs">
+            <div className="song-grid">
                 {
-                   songs.map((song,index)=>(
-                      <LibrarySongCard key={index} index={index} song={song}/>
+                   songs.slice(start, start+songsPerSlide).map((song,index)=>(
+                      <SongCard key={index} index={index} song={song} start={start}/>
                    ))
                 }
+            </div>
+            <div style={{fontSize : 20, color : "white", display : "flex", justifyContent : "center", alignContent : "center", margin : 10, padding : 10, gap : 10}}>
+                <button onClick={() => setSlide(slide-1)} disabled={slide === 0}>➖</button> 
+                <div style={{border : 2, borderColor : "black", borderStyle : "solid"}}><p> {slide+1} / {noOfSlides} </p></div>
+                <button onClick={() => setSlide(slide+1)} disabled={slide+1 === noOfSlides}>➕</button>
             </div>
         </div>
     )

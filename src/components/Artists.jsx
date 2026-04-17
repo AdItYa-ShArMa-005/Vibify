@@ -66,6 +66,11 @@ const Artists=()=>{
         setArtists(li);
     },[songPool]);
 
+    const[ slide, setSlide] = useState(0);
+    const artistsPerSlide = 15;
+    const start = slide * artistsPerSlide;
+    const noOfSlides = Math.ceil(artists.length/artistsPerSlide); 
+
     return(
         <div className="library">
             <div className="library-header">
@@ -73,12 +78,18 @@ const Artists=()=>{
                 <p>Every Artists you listen to, at one place.</p>
             </div>
 
-            <div className="songs">
+            <div className="song-grid">
                 {
-                   artists.map((artist,index)=>(
-                      <ArtistsCard key={index} index={index} artist={artist}/>
+                   artists.slice(start, start+artistsPerSlide).map((artist,index)=>(
+                      <ArtistsCard key={index} index={index} artist={artist} start ={start}/>
                    ))
                 }
+            </div>
+
+            <div style={{fontSize : 20, color : "white", display : "flex", justifyContent : "center", alignContent : "center", margin : 10, padding : 10, gap : 10}}>
+                <button onClick={() => setSlide(slide-1)} disabled={slide === 0}>➖</button> 
+                <div style={{border : 2, borderColor : "black", borderStyle : "solid"}}><p> {slide+1} / {noOfSlides} </p></div>
+                <button onClick={() => setSlide(slide+1)} disabled={slide+1 === noOfSlides}>➕</button>
             </div>
         </div>
     )
