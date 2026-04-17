@@ -24,7 +24,7 @@ const MainArea = () =>
           <Route path="Explore" element={<Explore />} />
           <Route path="Liked_songs" element={<LikedSongs />} />
           <Route path="Artists" element={<Artists/>}></Route>
-          <Route path="/Languages" element={<Languages/>}></Route>
+          <Route path="Languages" element={<Languages/>}></Route>
         </Routes>
         <MusicPlayer/>
         <Footer/>
@@ -32,12 +32,3 @@ const MainArea = () =>
     )
 }
 export default MainArea;
-//  <div className="main-content">
-//             <div className="content">
-//               <Initialize/>
-//               <CenterPanel/>
-//             </div>
-//             <div className="music">
-//               <MusicPlayer/>
-//             </div>
-//       </div>

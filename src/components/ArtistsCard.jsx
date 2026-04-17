@@ -1,14 +1,14 @@
 import { useDispatch } from "react-redux";
 import { toggleLike } from "../states/songpoolSlice";
 
-const ArtistsCard = ({ artist, index }) => {
+const ArtistsCard = ({ artist, index, start }) => {
   const dispatch = useDispatch();
 
   return (
     <div className="song-card">
       
       <div className="song-left">
-        <span className="song-index">{index + 1}</span>
+        <span className="song-index">{start + index + 1}</span>
 
         <img
           src={"/images/info.png"}
@@ -18,7 +18,7 @@ const ArtistsCard = ({ artist, index }) => {
 
         <div>
           <h4>{artist.singer}</h4>
-          <p>Number of songs : {artist.count}</p>
+          <p>Songs : {artist.count}</p>
         </div>
       </div>
 

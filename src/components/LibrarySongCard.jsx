@@ -1,14 +1,14 @@
 import { useDispatch } from "react-redux";
 import { toggleLike } from "../states/songpoolSlice";
 
-const LibrarySongCard = ({ song, index }) => {
+const LibrarySongCard = ({ song, index, start }) => {
   const dispatch = useDispatch();
 
   return (
     <div className="song-card">
       
       <div className="song-left">
-        <span className="song-index">{index + 1}</span>
+        <span className="song-index">{start + index + 1}</span>
 
         <img
           src={song.thumbnail}
