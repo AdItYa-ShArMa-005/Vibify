@@ -13,7 +13,6 @@ const LikedSongs = () => {
     useEffect(() => {
         setLikedSongs(songPool.filter(song => song.liked));
     },[songPool]);
-    // const likedSongs = useSelector(state => state.likedSongs.value);
     const category = useSelector(state => state.Category.value);
     const dispatch = useDispatch();
 

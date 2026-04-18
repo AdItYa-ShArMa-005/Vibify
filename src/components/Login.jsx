@@ -33,10 +33,7 @@ const Login = () => {
 
   
     <div style={styles.container}>
-      <div style={styles.signupbutton}>
-          <p>Not a user?</p>
-          <button type="button" onClick={()=>navigate("/signup")} className="bt">Sign up</button>
-          </div>
+        
       
         <form style={styles.form} onSubmit={handleSubmit}>
           <h1 style={styles.heading}>Welcome User </h1>
@@ -44,6 +41,7 @@ const Login = () => {
           <div style={{fontSize : 15, color : "red", textAlign : "center"}}>
             <h3>email : codeBeats@vibify.com</h3>
             <h3>password : password123</h3>
+            <p>Enter credentials mentioned above to login</p>
           </div>
           
           {entry === "email" ? (
@@ -103,6 +101,10 @@ const Login = () => {
               Continue with Email
             </button>
           )}
+          <div style={styles.signupbutton}>
+          <p>Not a user?</p>
+          <button type="button" onClick={()=>navigate("/signup")} className="bt">Sign up</button>
+        </div>
         </form>
       </div>
       <Footer/>
@@ -163,16 +165,12 @@ const styles = {
     borderRadius: "8px",
     cursor: "pointer",
   },
+
   signupbutton:{
-    position: "absolute",
-    top:"10px",
-    right:"10px",
-    display:"flex",
-    flexDirection:"row",
-    gap:"15px",
-    alignItems:"center",
-    cursor:"pointer"
-    
+    display  : "flex",
+    justifyContent : "center",
+    alignItems : "center",
+    gap : 20
   }
 };
 

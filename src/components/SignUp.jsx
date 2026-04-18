@@ -26,21 +26,13 @@ export default function SignUp(){
     return(
       <div>
         <div style={styles.container}>
-          <div style={styles.loginbutton}>
-          <p>Already have an account?</p>
-          <button type="button" onClick={()=>navigate("/login")} className="bt">Login</button>
-          </div>
-
-        
         <form style={styles.form} onSubmit={handleSubmit}>
-          <h1 style={styles.heading}>Welcome User </h1>
+          <h1 style={styles.heading}>Sign up </h1>
           <img src="/images/logo.png"></img>
           <div style={{fontSize : 15, color : "red", textAlign : "center"}}>
             <h3>This page is not authenticated so entering any credentials will work</h3>
           
           </div>
-          
-          {entry === "email" ? (
             <input
               type="email"
               name="email"
@@ -50,7 +42,6 @@ export default function SignUp(){
               style={styles.input}
               required
             />
-          ) : (
             <input
               type="tel"
               name="phoneN"
@@ -60,7 +51,6 @@ export default function SignUp(){
               style={styles.input}
               required
             />
-          )}
 
           <input
             type="password"
@@ -78,25 +68,10 @@ export default function SignUp(){
             Sign up
           </button>
 
-          <p style={{ textAlign: "center", color: "white" }}>or</p>
-
-          {entry === "email" ? (
-            <button
-              type="button"
-              style={styles.toggleBtn}
-              onClick={() => setEntry("ph")}
-            >
-              Continue with phone number
-            </button>
-          ) : (
-            <button
-              type="button"
-              style={styles.toggleBtn}
-              onClick={() => setEntry("email")}
-            >
-              Continue with Email
-            </button>
-          )}
+          <div style={styles.loginbutton}>
+          <p>Already have an account?</p>
+          <button type="button" onClick={()=>navigate("/")} className="bt">Login</button>
+          </div>
         </form>
       
       </div>
@@ -158,17 +133,12 @@ const styles = {
     borderRadius: "8px",
     cursor: "pointer",
   },
-  loginbutton:{
-    position: "absolute",
-    top:"10px",
-    right:"10px",
-    display:"flex",
-    flexDirection:"row",
-    gap:"15px",
-    alignItems:"center",
-    cursor:"pointer"
-    
 
-  },
+  loginbutton:{
+    display  : "flex",
+    justifyContent : "center",
+    alignItems : "center",
+    gap : 20
+  }
   
 };

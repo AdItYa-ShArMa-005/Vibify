@@ -8,7 +8,7 @@ const CenterPanel = () =>
     const [slide,setSlide]=useState(0);
     const listsongs = useSelector(state => state.songList.value);
     const dispatch = useDispatch();
-    const allMoods = ["Flow","Chill", "Party", "Romantic","Night drive","Focus","Warm","Sad","Feel good","Dance","Motivational"];
+    const allMoods = ["Flow","Chill", "Party", "Romantic","Focus","Warm","Sad","Dance","Motivational"];
 
     const moodsPerSlide = 5;
     const start = slide * moodsPerSlide;
@@ -23,8 +23,6 @@ const CenterPanel = () =>
             
             <p>An infinite personalized mix of the music you love and new discoveries</p>
 
-
-        {/* recommendation list */}
         
             <div className="song-container">
                 <div className="mood-bar"> 

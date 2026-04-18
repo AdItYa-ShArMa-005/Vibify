@@ -1,8 +1,5 @@
 import {  useDispatch } from "react-redux";
 import { setCurrentSong } from "../states/currentSongSlice";
-
-// import { toggleLike } from "../states/songpoolSlice";
-
 import { useSelector } from "react-redux";
 import SongCard from "../components/SongCard";
 import { useState, useEffect } from "react";
@@ -38,17 +35,6 @@ function Languages(){
         </div>
         </div> 
     )
-//  English
-// Spanish
-// Instrumental
-// Hindi
-// Punjabi
-// Telugu
-// Tamil
-// Korean
-// French
-// Arabic
-        
-    
+      
 }
 export default Languages;

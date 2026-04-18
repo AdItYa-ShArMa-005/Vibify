@@ -20,11 +20,6 @@ const Initialize = () => {
         dispatch(setSongList(songPool.filter(song => calculateDifference(song.timeStamp))));
         },[]);
 
-    // useEffect(()=>{
-    //     console.log("category changed to " + category);
-    //     console.log("in initialize");
-    // },[category]);
-
     useEffect(()=>{
         dispatch(setInitialLiked(songPool.filter(song => song.liked === true)));
     },[songPool]);
@@ -38,12 +33,6 @@ const Initialize = () => {
             dispatch(setSongList(songPool.filter(song => song.mood.includes(category))));
     },[songPool,category]);
 
-
-    // console.log("Category : " + category);
-    // console.log("SongList : " + songList);
-    // console.log("CurrentSong : " + currentSong);
-    // console.log("Liked songs : " + likedSong);
-    // console.log("Song pool : " + songPool);
     return null;
 
 }

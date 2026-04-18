@@ -67,7 +67,7 @@ const Artists=()=>{
     },[songPool]);
 
     const[ slide, setSlide] = useState(0);
-    const artistsPerSlide = 15;
+    const artistsPerSlide = 56;
     const start = slide * artistsPerSlide;
     const noOfSlides = Math.ceil(artists.length/artistsPerSlide); 
 
