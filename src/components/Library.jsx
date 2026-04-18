@@ -2,13 +2,15 @@ import { useSelector } from "react-redux";
 import {useState} from 'react';
 import LibrarySongCard from "../components/LibrarySongCard";
 import SongCard from "./SongCard";
-
+import { setCurrentSong } from "../states/currentSongSlice";
+import { useDispatch } from "react-redux";
 const Library = () => {
     const songs = useSelector(state => state.songPool.value);
     const[ slide, setSlide] = useState(0);
     const songsPerSlide = 15;
     const start = slide * songsPerSlide;
     const noOfSlides = Math.ceil(songs.length/songsPerSlide); 
+    const dispatch=useDispatch();
     return (
         <div className="library">
             <div className="library-header">
@@ -19,7 +21,7 @@ const Library = () => {
             <div className="song-grid">
                 {
                    songs.slice(start, start+songsPerSlide).map((song,index)=>(
-                      <SongCard key={index} index={index} song={song} start={start}/>
+                      <SongCard key={index} index={index} song={song} start={start} onClick={()=>dispatch(setCurrentSong(song))}/>
                    ))
                 }
             </div>
