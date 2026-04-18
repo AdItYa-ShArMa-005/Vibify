@@ -13,10 +13,7 @@ const MusicPlayer = () => {
     const [progress, setProgress] = useState(0);
     const [currentTime, setCurrentTime] = useState("0:00");
     const [totalTime, setTotalTime] = useState("0:00");
-
-    // ✅ SINGLE SOURCE OF TRUTH
     const [isLiked, setIsLiked] = useState(song.liked);
-
     const playerRef = useRef(null);
     const playerReady = useRef(false);
     const intervalRef = useRef(null);
@@ -126,7 +123,6 @@ const MusicPlayer = () => {
         }
     };
 
-    // ✅ FIXED INDEX LOGIC
     const nextSong = () => {
         let index = songList.findIndex(s => s.title === song.title);
         dispatch(setCurrentSong(songList[index + 1]));

@@ -8,20 +8,8 @@ const MoodSection = ({mood}) => {
 
     const dispatch = useDispatch();
     const category = useSelector(state => state.Category.value);
-    // const songs = useSelector((state) => state.songPool.value);
-
     function songHandler(id){
 
-        // if(id === category)
-        // {
-        //     dispatch(setCategory("None"));
-        //     dispatch(setSongList(songs.filter(song => calculateDifference(song.timeStamp))));
-        // }
-        // else 
-        // {
-        //     dispatch(setCategory(id));
-        //     dispatch(setSongList(songs.filter(song => song.mood.includes(id))))
-        // }
         if(id === category){
             dispatch(setCategory("None"));console.log("category changed to None");}
         else{

@@ -133,7 +133,7 @@ const Header = () => {
             </div>
 
             <div style={{height : 20, width : 40}}>
-                <button style={{fontSize : 20, color : "white", backgroundColor : "red", padding : 2, textAlign : "center", borderRadius : 10}} onClick={() => navigate("/")}>Logout</button>
+                <button className="bt" onClick={() => navigate("/")}>Logout</button>
             </div>
         </div>
             <LeftPanel/>

@@ -12,10 +12,7 @@ const LeftPanel = () =>
                 <Link to="/Home/Liked_Songs" className="link">Liked Songs</Link>
                 <Link to="/Home/Artists" className="link">Artists</Link>
                 <Link to="/Home/Languages" className="link">Languages</Link>
-
-
-                
-                
+    
         </div>
     )
 }
