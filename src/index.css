@@ -48,8 +48,8 @@ body {
 
 /* LOGO */
 .logo {
-    height: 60px;
-    width: 100px;
+    height: 110px;
+    width: 160px;
     object-fit: contain;
 }
 
@@ -525,11 +525,12 @@ body {
 /* ── Footer ── */
 .footer {
     padding: 15px;
-    height: 200px;
+    height: 300px;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    margin-top:0px;
     background: #121821;
     color: #ccc;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -538,7 +539,8 @@ body {
 .footer-inner {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
+    margin-top: 20px;
     justify-content: center;
     gap: 48px;
     width: 100%;
@@ -612,7 +614,7 @@ body {
 /* ── Library ── */
 .library {
     padding: 20px;
-    background-color: #121212;
+    background: radial-gradient(circle at top, #1d3444, #14212f 60%);
     min-height: 100vh;
     color: white;
 }
@@ -688,7 +690,7 @@ body {
 /* ── Language ── */
 .language {
     padding: 20px 40px;
-    background: #0f172a;
+   background: radial-gradient(circle at top, #1d3444, #14212f 60%);
     min-height: 100vh;
     color: white;
 }
@@ -853,4 +855,18 @@ body {
 .artist-genre {
     font-size: 11px;
     color: #6b6b7a;
+}
+.all-songs h2{
+    margin-top:15px;
+}
+.liked-songs{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-left: 100px;
+}
+.liked-songs h2{
+    /* text-align: center; */
+    margin: 20px;
+    margin-left:550px
 }
