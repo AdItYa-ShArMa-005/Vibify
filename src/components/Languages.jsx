@@ -8,6 +8,7 @@ function Languages(){
     const languages=["English","Spanish","Instrumental","Hindi","Punjabi","Telugu","Tamil","Korean","French","Arabic"];
     const [lang,setLang] = useState(languages[0]);
     const [list, setList] = useState([]);
+    const dispatch = useDispatch();
     useEffect(() => {
         setList(songs.filter(song => song.language === lang));
     },[]);
@@ -30,7 +31,7 @@ function Languages(){
         </div>
         <div className="song-grid">
             {
-                list.map((s,index)=><SongCard key={index} song={s} onClick={()=>useDispatch(setCurrentSong(s))}/>)
+                list.map((s,index)=><SongCard key={index} song={s} onClick={()=>dispatch(setCurrentSong(s))}/>)
             }
         </div>
         </div> 

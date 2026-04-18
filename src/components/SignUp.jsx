@@ -83,7 +83,7 @@ const styles = {
   container: {
     display: "flex",
     height: "920px",
-    width: "100vw",
+   
     background: " radial-gradient(#1d3444 ,#1d3544) ",
     alignItems:"center",
     justifyContent:"center",

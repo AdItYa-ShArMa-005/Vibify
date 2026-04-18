@@ -28,8 +28,8 @@ const LikedSongs = () => {
     const noOfSlides = Math.ceil(likedSongs.length/songsPerSlide); 
 
     return(
-        <div>
-            <h2>Liked Songs: </h2>
+        <div className="liked-songs">
+            <h2 >Liked Songs </h2>
             {
                 likedSongs.slice(start, start+songsPerSlide).map((song, index) => (
                                 <button key={index} className="song-button" onClick={() => handleClick(song)}>
