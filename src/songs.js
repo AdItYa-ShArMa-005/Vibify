@@ -343,6 +343,18 @@ export const songs = [
     liked: false
   },
   {
+    title: "Drivers License",
+    singers: ["Olivia Rodrigo"],
+    mood: ["Sad", "Romantic", "Flow"],
+    year: 2018,
+    album: "Sonu Ke Titu Ki Sweety",
+    duration: "3:46",
+    language: "Hindi",
+    thumbnail: "https://i.ytimg.com/vi/ZmDBbnmKpqQ/hqdefault.jpg",
+    timeStamp: "10:45 PM",
+    liked: false
+  },
+  {
     title: "Let Her Go",
     singers: ["Passenger"],
     mood: ["Sad", "Emotional"],
@@ -1020,18 +1032,6 @@ export const songs = [
     language: "Hindi",
     thumbnail: "https://i.ytimg.com/vi/yIIGQB6EMAM/hqdefault.jpg",
     timeStamp: "10:25 PM",
-    liked: false
-  },
-  {
-    title: "Dil Chori",
-    singers: ["Yo Yo Honey Singh", "Simar Kaur"],
-    mood: ["Party", "Dance", "Wedding"],
-    year: 2018,
-    album: "Sonu Ke Titu Ki Sweety",
-    duration: "3:46",
-    language: "Hindi",
-    thumbnail: "https://i.ytimg.com/vi/ZmDBbnmKpqQ/hqdefault.jpg",
-    timeStamp: "10:45 PM",
     liked: false
   },
   {
