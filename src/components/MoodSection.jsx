@@ -33,7 +33,7 @@ const MoodSection = ({mood}) => {
     return (
         <div className="mood-icons">
             <button className="mood-icons" onClick={() => songHandler(mood)}>
-                <img src={`/images/${mood}.jpeg`} alt={mood} />
+                <img src={`/images/${mood}.jpeg`} alt={mood} className="mood-icon"/>
                 
                 <div className="songtitle">{mood}</div>
             </button>

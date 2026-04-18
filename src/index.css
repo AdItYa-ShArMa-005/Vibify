@@ -702,3 +702,29 @@ body{
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
+.mood-icon{
+    transition: all 0.3s ease;
+}
+.mood-icon:hover{
+    transform:scale(1.07);
+    cursor:pointer;
+     box-shadow: 0 10px 30px rgba(34, 144, 191, 0.4);
+}
+.noise,.expand,.info{
+    filter:invert(1);
+}
+.bt{
+ background-color: #A52A2A;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+
+}
+.bt:hover{
+ background-color: #7F1D1D;
+  transform: scale(1.05);
+
+}

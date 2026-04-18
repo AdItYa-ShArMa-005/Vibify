@@ -1,49 +1,43 @@
-import { FolderMinus } from "lucide-react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 import Footer from "./Footer";
-const Login = () => {
-  const navigate = useNavigate();
-  const [entry, setEntry] = useState("email");
-  const [message, setMessage] = useState("");
-
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if(formData.email === "codeBeats@vibify.com" && formData.password === "password123")
-      navigate("/Home");
-    else
-      setMessage("Invalid email or Password !!! ");
-  };
-
-  return (
-    <div>
-
-  
-    <div style={styles.container}>
-      <div style={styles.signupbutton}>
-          <p>Not a user?</p>
-          <button type="button" onClick={()=>navigate("/signup")} className="bt">Sign up</button>
+export default function SignUp(){
+    function handleSubmit(e){
+        e.preventDefault();
+        navigate("/Home");
+    }
+      const navigate = useNavigate();
+      const [entry, setEntry] = useState("email");
+      const [message, setMessage] = useState("");
+    
+      const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+        PhoneN:""
+      });
+    
+      const handleChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value,
+        });
+      };
+    
+    return(
+      <div>
+        <div style={styles.container}>
+          <div style={styles.loginbutton}>
+          <p>Already have an account?</p>
+          <button type="button" onClick={()=>navigate("/login")} className="bt">Login</button>
           </div>
-      
+
+        
         <form style={styles.form} onSubmit={handleSubmit}>
           <h1 style={styles.heading}>Welcome User </h1>
           <img src="/images/logo.png"></img>
           <div style={{fontSize : 15, color : "red", textAlign : "center"}}>
-            <h3>email : codeBeats@vibify.com</h3>
-            <h3>password : password123</h3>
+            <h3>This page is not authenticated so entering any credentials will work</h3>
+          
           </div>
           
           {entry === "email" ? (
@@ -80,8 +74,8 @@ const Login = () => {
 
           {message && <div style={{fontSize : 15, color : "red", textAlign : "center"}}>{message}</div>}
 
-          <button type="submit" style={styles.button}>
-            Login
+          <button type="submit" style={styles.button} >
+            Sign up
           </button>
 
           <p style={{ textAlign: "center", color: "white" }}>or</p>
@@ -104,12 +98,12 @@ const Login = () => {
             </button>
           )}
         </form>
+      
       </div>
       <Footer/>
-     </div>
-  );
-};
-
+    </div>
+    )
+}
 const styles = {
   container: {
     display: "flex",
@@ -120,6 +114,7 @@ const styles = {
     justifyContent:"center",
     position:"relative"
   },
+
 
   form: {
     display: "flex",
@@ -163,7 +158,7 @@ const styles = {
     borderRadius: "8px",
     cursor: "pointer",
   },
-  signupbutton:{
+  loginbutton:{
     position: "absolute",
     top:"10px",
     right:"10px",
@@ -173,7 +168,7 @@ const styles = {
     alignItems:"center",
     cursor:"pointer"
     
-  }
-};
 
-export default Login;
+  },
+  
+};
