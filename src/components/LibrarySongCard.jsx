@@ -30,7 +30,7 @@ const LibrarySongCard = ({ song, index, start }) => {
           onClick={() => dispatch(toggleLike(index))}
           style={{ color: song.liked ? "red" : "white" }}
         >
-          ❤️
+         ❤️
         </span>
       </div>
 
